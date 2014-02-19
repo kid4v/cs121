@@ -21,7 +21,8 @@
     
     bool start;
     
-    NSTimeInterval time;
+//    NSTimeInterval time;
+    CFTimeInterval time;
 }
 
 - (void)viewDidLoad
@@ -36,16 +37,15 @@
     if (start == false) {
         return;
     }
-    NSTimeInterval currentTime = [NSDate timeIntervalSinceReferenceDate];
-    NSTimeInterval elapsedTime = (currentTime - time);
+    CFTimeInterval currentTime = CACurrentMediaTime();
+    CFTimeInterval elapsedTime = (currentTime - time);
     
-    // 121.333 seconds
     int minutes = (int)(elapsedTime / 60);
     int seconds = (int)(elapsedTime - (minutes * 60));
     int millis = (int)((elapsedTime - (minutes*60) - seconds) * 1000);
     self.display.text = [NSString stringWithFormat:@"%u:%02u.%03u", minutes, seconds, millis];
     
-    [self performSelector:@selector(update) withObject:self afterDelay:0.1];
+    [self performSelector:@selector(update) withObject:self afterDelay:0.001];
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,7 +58,7 @@
     
     if (start == false) {
         start = true;
-        time = [NSDate timeIntervalSinceReferenceDate];
+        time = CACurrentMediaTime();
         [sender setTitle:@"Stop!" forState:UIControlStateNormal];
    
         [self update];
