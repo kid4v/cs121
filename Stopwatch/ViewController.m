@@ -28,7 +28,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.display.text = @"0:00.000";
+    
+//    Uncomment for upside-down label
+//    [self.display setTransform:CGAffineTransformMakeRotation(-M_PI)];
+    
+//    self.display.text = @"0:00.000";
+    self.display.text = @"";
+
     start = false;
 
 }
@@ -58,12 +64,24 @@
     
     if (start == false) {
         start = true;
+        self.display.text = @"";
         time = CACurrentMediaTime();
         [sender setTitle:@"Stop!" forState:UIControlStateNormal];
    
-        [self update];
+//        [self update];
     } else {
         start = false;
+        
+        //when update isn't used and silent stopwatch is desired:
+        CFTimeInterval currentTime = CACurrentMediaTime();
+        CFTimeInterval elapsedTime = (currentTime - time);
+        
+        int minutes = (int)(elapsedTime / 60);
+        int seconds = (int)(elapsedTime - (minutes * 60));
+        int millis = (int)((elapsedTime - (minutes*60) - seconds) * 1000);
+        self.display.text = [NSString stringWithFormat:@"%u:%02u.%03u", minutes, seconds, millis];
+        
+        
         [sender setTitle:@"Start" forState:UIControlStateNormal];
     }
 }
