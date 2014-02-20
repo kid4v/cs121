@@ -30,7 +30,7 @@
     [super viewDidLoad];
     
 //    Uncomment for upside-down label
-//    [self.display setTransform:CGAffineTransformMakeRotation(-M_PI)];
+    [self.display setTransform:CGAffineTransformMakeRotation(-M_PI)];
     
 //    self.display.text = @"0:00.000";
     self.display.text = @"";
