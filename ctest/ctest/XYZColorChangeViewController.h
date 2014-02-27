@@ -13,5 +13,5 @@
 
 - (IBAction)onBottomPressed:(id)sender;
 - (IBAction)onTopPressed:(id)sender;
-
+- (IBAction)gamesStart:(id)sender;
 @end
