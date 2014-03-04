@@ -29,9 +29,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.bottomTapped = false;
-        self.topTaped = false;
-        self.started = false;
 
         // Custom initialization
     }
@@ -41,9 +38,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.topView.backgroundColor = [UIColor yellowColor];
-    self.bottomView.backgroundColor = [UIColor yellowColor];
-
+    [self reset];
 	// Do any additional setup after loading the view.
 
 }
@@ -56,19 +51,43 @@
 }
 
 - (IBAction)gamesStart:(id)sender {
-
-    [NSTimer scheduledTimerWithTimeInterval:0.5 target:self
-        selector:@selector(start:)
-        userInfo:nil
-        repeats:NO];
+    self.readyButton.titleLabel.text = @"set";
+    if (!self.started){
+        double waitTime = arc4random_uniform(2300)>>10;
+        [NSTimer scheduledTimerWithTimeInterval:waitTime target:self
+                                       selector:@selector(start:)
+                                       userInfo:nil
+                                        repeats:NO];
+    }
+    else if ([self isOver]){
+        [self reset];
+    }
+}
+- (bool) isOver{
+    return (self.topTaped && self.bottomTapped);
+}
+- (void) reset
+{
+    self.bottomTapped = false;
+    self.topTaped = false;
+    self.started = false;
+    self.readyButton.titleLabel.text = @"READY!";
+    self.topTextBox.text = @"";
+    self.topTimeBox.text = @"";
+    self.bottomTextBox.text = @"";
+    self.bottomTimeBox.text = @"";
+    self.topView.backgroundColor = [UIColor yellowColor];
+    self.bottomView.backgroundColor = [UIColor yellowColor];
 }
 
 - (IBAction) start: (id)sender {
+    if(!self.started){
     self.started = true;
     self.startTime = CACurrentMediaTime();
     self.topView.backgroundColor = [UIColor greenColor];
     self.bottomView.backgroundColor = [UIColor greenColor];
     self.readyButton.titleLabel.text = @"GO!";
+    }
 }
 
 - (IBAction)onBottomPressed:(id)sender {
@@ -82,23 +101,17 @@
 
         if (!self.topTaped){
             self.bottomTextBox.text = @"You won!";
-
         }
+        
         else {
             self.bottomTextBox.text = @"You Lost";
+            self.readyButton.titleLabel.text = @"RESET";
         }
 
         self.bottomTimeBox.text = [NSString stringWithFormat:@"%f",howFast];
     }
     else if (!self.started && !self.bottomTapped){
-        self.bottomTapped = true;
-        self.topTaped = true;
-        self.topView.backgroundColor = [UIColor redColor];
-        self.bottomView.backgroundColor = [UIColor redColor];
-        [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
-        self.topTextBox.text = @"Other played missfired you win!";
-        self.bottomTextBox.text = @"Missfire, You lose!";
-
+        [self missFireFrom:self.bottomTextBox and:self.topTextBox];
     }
     
 }
@@ -109,30 +122,35 @@ if (!self.topTaped && self.started){
     self.topTaped = true;
     CFTimeInterval currentTime = CACurrentMediaTime();
     CFTimeInterval howFast = currentTime - self.startTime ;
+    self.topView.backgroundColor = [UIColor redColor];
     if (!self.bottomTapped){
-        self.topView.backgroundColor = [UIColor redColor];
         [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
         self.topTextBox.text = @"You won!";
         }
-    
     else {
-        self.topView.backgroundColor = [UIColor redColor];
         [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
         self.topTextBox.text = @"You Lost";
+        self.readyButton.titleLabel.text = @"RESET";
     }
     
     [self.topTimeBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
     self.topTimeBox.text = [NSString stringWithFormat:@"%f",howFast];
 }
 else if (!self.started && !self.topTaped){
+    [self missFireFrom:self.topTextBox and:self.bottomTextBox];
+}
+}
+
+- (IBAction)missFireFrom:(UILabel*)loser and: (UILabel*) winner
+{
     self.bottomTapped = true;
     self.topTaped = true;
+    self.started = true;
     self.topView.backgroundColor = [UIColor redColor];
     self.bottomView.backgroundColor = [UIColor redColor];
     [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
-    self.bottomTextBox.text = @"Other played missfired you win!";
-    self.topTextBox.text = @"Missfire, You lose!";
-    
-}
+    winner.text = @"Other played missfired you win!";
+    loser.text = @"Missfire, You lose!";
+    self.readyButton.titleLabel.text = @"RESET";
 }
 @end
