@@ -16,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *topTimeBox;
 @property (weak, nonatomic) IBOutlet UILabel *bottomTimeBox;
 @property (weak, nonatomic) IBOutlet UIButton *readyButton;
-@property Boolean topTaped;
+@property Boolean topTapped;
 @property Boolean bottomTapped;
 @property CFTimeInterval startTime;
 
@@ -53,7 +53,8 @@
 - (IBAction)gamesStart:(id)sender {
     self.readyButton.titleLabel.text = @"set";
     if (!self.started){
-        double waitTime = arc4random_uniform(2300)>>10;
+        double waitTime = ((double)rand() / RAND_MAX) * 3 + 1;
+        //NSLog(@"%f", waitTime);
         [NSTimer scheduledTimerWithTimeInterval:waitTime target:self
                                        selector:@selector(start:)
                                        userInfo:nil
@@ -64,20 +65,23 @@
     }
 }
 - (bool) isOver{
-    return (self.topTaped && self.bottomTapped);
+    return (self.topTapped && self.bottomTapped);
 }
 - (void) reset
 {
     self.bottomTapped = false;
-    self.topTaped = false;
+    self.topTapped = false;
     self.started = false;
+    
     self.readyButton.titleLabel.text = @"READY!";
+    
     self.topTextBox.text = @"";
     self.topTimeBox.text = @"";
     self.bottomTextBox.text = @"";
     self.bottomTimeBox.text = @"";
-    self.topView.backgroundColor = [UIColor yellowColor];
-    self.bottomView.backgroundColor = [UIColor yellowColor];
+    
+    self.topView.backgroundColor = [UIColor whiteColor];
+    self.bottomView.backgroundColor = [UIColor whiteColor];
 }
 
 - (IBAction) start: (id)sender {
@@ -99,7 +103,7 @@
         CFTimeInterval currentTime = CACurrentMediaTime();
         CFTimeInterval howFast = currentTime - self.startTime;
 
-        if (!self.topTaped){
+        if (!self.topTapped){
             self.bottomTextBox.text = @"You won!";
         }
         
@@ -118,8 +122,8 @@
 - (IBAction)onTopPressed:(id)sender {
     
     //prevent false update
-if (!self.topTaped && self.started){
-    self.topTaped = true;
+if (!self.topTapped && self.started){
+    self.topTapped = true;
     CFTimeInterval currentTime = CACurrentMediaTime();
     CFTimeInterval howFast = currentTime - self.startTime ;
     self.topView.backgroundColor = [UIColor redColor];
@@ -136,7 +140,7 @@ if (!self.topTaped && self.started){
     [self.topTimeBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
     self.topTimeBox.text = [NSString stringWithFormat:@"%f",howFast];
 }
-else if (!self.started && !self.topTaped){
+else if (!self.started && !self.topTapped){
     [self missFireFrom:self.topTextBox and:self.bottomTextBox];
 }
 }
@@ -144,7 +148,7 @@ else if (!self.started && !self.topTaped){
 - (IBAction)missFireFrom:(UILabel*)loser and: (UILabel*) winner
 {
     self.bottomTapped = true;
-    self.topTaped = true;
+    self.topTapped = true;
     self.started = true;
     self.topView.backgroundColor = [UIColor redColor];
     self.bottomView.backgroundColor = [UIColor redColor];
