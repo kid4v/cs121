@@ -5,9 +5,9 @@
 //  Created by CS121 on 2/19/14.
 //  Copyright (c) 2014 CS121. All rights reserved.
 //
-#import "XYZColorChangeViewController.h"
+#import "XYZMini1ViewController.h"
 
-@interface XYZColorChangeViewController ()
+@interface XYZMini1ViewController ()
 @property Boolean started;
 @property (weak, nonatomic) IBOutlet XYZColorUIView *topView;
 @property (weak, nonatomic) IBOutlet XYZColorUIView *bottomView;
@@ -23,7 +23,7 @@
 
 @end
 
-@implementation XYZColorChangeViewController
+@implementation XYZMini1ViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -38,7 +38,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self reset];
+    [self setup];
 	// Do any additional setup after loading the view.
 
 }
@@ -51,8 +51,10 @@
 }
 
 - (IBAction)gamesStart:(id)sender {
-    self.readyButton.titleLabel.text = @"set";
     if (!self.started){
+        [self.readyButton setTitle:@"SET..." forState:UIControlStateNormal];
+//        NSLog(@"%@", self.readyButton.titleLabel.text);
+        self.readyButton.enabled = NO;
         double waitTime = ((double)rand() / RAND_MAX) * 3 + 1;
         //NSLog(@"%f", waitTime);
         [NSTimer scheduledTimerWithTimeInterval:waitTime target:self
@@ -60,20 +62,33 @@
                                        userInfo:nil
                                         repeats:NO];
     }
+    //If this game is over...
     else if ([self isOver]){
-        [self reset];
+        //check for more games in gameSession
+        if ([self.gameSession count] == 0) {
+            [self.readyButton setTitle:@"GAME OVER" forState:UIControlStateNormal];
+            self.readyButton.enabled = NO;
+        } else {
+            NSString * segue = [NSString stringWithFormat: @"%@", [self.gameSession dequeue]];
+            //if next game is also 1, use self1 segue.
+            if ([segue isEqualToString:@"1"]){
+                segue = [NSString stringWithFormat:@"self%@", segue];
+            }
+            [self performSegueWithIdentifier:segue sender:sender];
+        }
     }
 }
 - (bool) isOver{
     return (self.topTapped && self.bottomTapped);
 }
-- (void) reset
+- (void) setup
 {
     self.bottomTapped = false;
     self.topTapped = false;
     self.started = false;
     
-    self.readyButton.titleLabel.text = @"READY!";
+    [self.readyButton setTitle:@"READY?" forState:UIControlStateNormal];
+    self.readyButton.enabled = YES;
     
     self.topTextBox.text = @"";
     self.topTimeBox.text = @"";
@@ -84,13 +99,14 @@
     self.bottomView.backgroundColor = [UIColor whiteColor];
 }
 
+// GO!!!
 - (IBAction) start: (id)sender {
     if(!self.started){
     self.started = true;
     self.startTime = CACurrentMediaTime();
-    self.topView.backgroundColor = [UIColor greenColor];
-    self.bottomView.backgroundColor = [UIColor greenColor];
-    self.readyButton.titleLabel.text = @"GO!";
+    self.topView.backgroundColor = [UIColor blueColor];
+    self.bottomView.backgroundColor = [UIColor blueColor];
+        [self.readyButton setTitle:@"GO!!!" forState:UIControlStateNormal];
     }
 }
 
@@ -99,23 +115,27 @@
     if (!self.bottomTapped && self.started){
         //we won so we just set the color eventaully we will record the time too
         self.bottomTapped = true;
-        self.bottomView.backgroundColor = [UIColor redColor];
         CFTimeInterval currentTime = CACurrentMediaTime();
-        CFTimeInterval howFast = currentTime - self.startTime;
+        CFTimeInterval elapsedTime = currentTime - self.startTime;
 
+        //bottom wins
         if (!self.topTapped){
             self.bottomTextBox.text = @"You won!";
+            self.bottomView.backgroundColor = [UIColor greenColor];
         }
         
+        //top wins
         else {
+            self.bottomView.backgroundColor = [UIColor redColor];
             self.bottomTextBox.text = @"You Lost";
-            self.readyButton.titleLabel.text = @"RESET";
+            [self.readyButton setTitle:@"NEXT" forState:UIControlStateNormal];
+            self.readyButton.enabled = YES;
         }
 
-        self.bottomTimeBox.text = [NSString stringWithFormat:@"%f",howFast];
+        self.bottomTimeBox.text = [NSString stringWithFormat:@"%f",elapsedTime];
     }
     else if (!self.started && !self.bottomTapped){
-        [self missFireFrom:self.bottomTextBox and:self.topTextBox];
+        [self misFireFrom:self.bottomTextBox and:self.topTextBox];
     }
     
 }
@@ -126,26 +146,31 @@ if (!self.topTapped && self.started){
     self.topTapped = true;
     CFTimeInterval currentTime = CACurrentMediaTime();
     CFTimeInterval howFast = currentTime - self.startTime ;
-    self.topView.backgroundColor = [UIColor redColor];
+    
+    //top wins
     if (!self.bottomTapped){
+        self.topView.backgroundColor = [UIColor greenColor];
         [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
         self.topTextBox.text = @"You won!";
         }
+    //bottom wins
     else {
+        self.topView.backgroundColor = [UIColor redColor];
         [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
         self.topTextBox.text = @"You Lost";
-        self.readyButton.titleLabel.text = @"RESET";
+        [self.readyButton setTitle:@"NEXT" forState:UIControlStateNormal];
+        self.readyButton.enabled = YES;
     }
     
     [self.topTimeBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
     self.topTimeBox.text = [NSString stringWithFormat:@"%f",howFast];
 }
 else if (!self.started && !self.topTapped){
-    [self missFireFrom:self.topTextBox and:self.bottomTextBox];
+    [self misFireFrom:self.topTextBox and:self.bottomTextBox];
 }
 }
 
-- (IBAction)missFireFrom:(UILabel*)loser and: (UILabel*) winner
+- (IBAction)misFireFrom:(UILabel*)loser and: (UILabel*) winner
 {
     self.bottomTapped = true;
     self.topTapped = true;
@@ -153,8 +178,9 @@ else if (!self.started && !self.topTapped){
     self.topView.backgroundColor = [UIColor redColor];
     self.bottomView.backgroundColor = [UIColor redColor];
     [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
-    winner.text = @"Other played missfired you win!";
-    loser.text = @"Missfire, You lose!";
-    self.readyButton.titleLabel.text = @"RESET";
+    winner.text = @"Other played misfired you win!";
+    loser.text = @"Misfire, You lose!";
+    [self.readyButton setTitle:@"NEXT" forState:UIControlStateNormal];
+    self.readyButton.enabled = YES;
 }
 @end

@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "XYZColorUIView.h"
+#import "NSMutableArray+QueueAdditions.h"
 
-@interface XYZColorChangeViewController : UIViewController
+@interface XYZMini1ViewController : UIViewController
 
 - (IBAction)onBottomPressed:(id)sender;
 - (IBAction)onTopPressed:(id)sender;
 - (IBAction)gamesStart:(id)sender;
+
+@property (nonatomic) NSMutableArray* gameSession;
+
 @end

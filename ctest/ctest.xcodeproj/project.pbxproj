@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5343F30818CE8DE400544BD0 /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 5343F30718CE8DE400544BD0 /* NSMutableArray+QueueAdditions.m */; };
+		53E23F5F18CD85CD00CD0B7B /* XYZMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E23F5E18CD85CD00CD0B7B /* XYZMenuViewController.m */; };
 		9399D65A18B4DF6E000324E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9399D65918B4DF6E000324E7 /* Foundation.framework */; };
 		9399D65C18B4DF6E000324E7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9399D65B18B4DF6E000324E7 /* CoreGraphics.framework */; };
 		9399D65E18B4DF6E000324E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9399D65D18B4DF6E000324E7 /* UIKit.framework */; };
@@ -20,10 +22,9 @@
 		9399D67B18B4DF6E000324E7 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9399D65D18B4DF6E000324E7 /* UIKit.framework */; };
 		9399D68318B4DF6E000324E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9399D68118B4DF6E000324E7 /* InfoPlist.strings */; };
 		9399D68518B4DF6E000324E7 /* ctestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9399D68418B4DF6E000324E7 /* ctestTests.m */; };
-		939AB52B18B5AA0B00A249CC /* XYZColorChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 939AB52A18B5AA0B00A249CC /* XYZColorChangeViewController.m */; };
+		939AB52B18B5AA0B00A249CC /* XYZMini1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 939AB52A18B5AA0B00A249CC /* XYZMini1ViewController.m */; };
 		939AB52E18B5AC9500A249CC /* xyzUIview.m in Sources */ = {isa = PBXBuildFile; fileRef = 939AB52D18B5AC9500A249CC /* xyzUIview.m */; };
 		939AB53118B5ACEB00A249CC /* XYZColorUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 939AB53018B5ACEB00A249CC /* XYZColorUIView.m */; };
-		93D7F9E018BCC75F00492E78 /* XYZViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93D7F9DF18BCC75F00492E78 /* XYZViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5343F30618CE8DE400544BD0 /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSMutableArray+QueueAdditions.h"; path = "../../../Downloads/ios-queue-object-master/NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
+		5343F30718CE8DE400544BD0 /* NSMutableArray+QueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSMutableArray+QueueAdditions.m"; path = "../../../Downloads/ios-queue-object-master/NSMutableArray+QueueAdditions.m"; sourceTree = "<group>"; };
+		53E23F5D18CD85CD00CD0B7B /* XYZMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZMenuViewController.h; sourceTree = "<group>"; };
+		53E23F5E18CD85CD00CD0B7B /* XYZMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZMenuViewController.m; sourceTree = "<group>"; };
 		9399D65618B4DF6E000324E7 /* ctest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ctest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9399D65918B4DF6E000324E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9399D65B18B4DF6E000324E7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,14 +59,12 @@
 		9399D68018B4DF6E000324E7 /* ctestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ctestTests-Info.plist"; sourceTree = "<group>"; };
 		9399D68218B4DF6E000324E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9399D68418B4DF6E000324E7 /* ctestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ctestTests.m; sourceTree = "<group>"; };
-		939AB52918B5AA0B00A249CC /* XYZColorChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZColorChangeViewController.h; sourceTree = "<group>"; };
-		939AB52A18B5AA0B00A249CC /* XYZColorChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZColorChangeViewController.m; sourceTree = "<group>"; };
+		939AB52918B5AA0B00A249CC /* XYZMini1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZMini1ViewController.h; sourceTree = "<group>"; };
+		939AB52A18B5AA0B00A249CC /* XYZMini1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZMini1ViewController.m; sourceTree = "<group>"; };
 		939AB52C18B5AC9500A249CC /* xyzUIview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = xyzUIview.h; path = ctest/xyzUIview.h; sourceTree = "<group>"; };
 		939AB52D18B5AC9500A249CC /* xyzUIview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = xyzUIview.m; path = ctest/xyzUIview.m; sourceTree = "<group>"; };
 		939AB52F18B5ACEB00A249CC /* XYZColorUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZColorUIView.h; sourceTree = "<group>"; };
 		939AB53018B5ACEB00A249CC /* XYZColorUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZColorUIView.m; sourceTree = "<group>"; };
-		93D7F9DE18BCC75F00492E78 /* XYZViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XYZViewController.h; path = ../../../../../.Trash/XYZViewController.h; sourceTree = "<group>"; };
-		93D7F9DF18BCC75F00492E78 /* XYZViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XYZViewController.m; path = ../../../../../.Trash/XYZViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,13 +126,15 @@
 		9399D65F18B4DF6E000324E7 /* ctest */ = {
 			isa = PBXGroup;
 			children = (
-				93D7F9DE18BCC75F00492E78 /* XYZViewController.h */,
-				93D7F9DF18BCC75F00492E78 /* XYZViewController.m */,
 				9399D66818B4DF6E000324E7 /* XYZAppDelegate.h */,
 				9399D66918B4DF6E000324E7 /* XYZAppDelegate.m */,
 				9399D66B18B4DF6E000324E7 /* Main.storyboard */,
-				939AB52918B5AA0B00A249CC /* XYZColorChangeViewController.h */,
-				939AB52A18B5AA0B00A249CC /* XYZColorChangeViewController.m */,
+				939AB52918B5AA0B00A249CC /* XYZMini1ViewController.h */,
+				939AB52A18B5AA0B00A249CC /* XYZMini1ViewController.m */,
+				5343F30618CE8DE400544BD0 /* NSMutableArray+QueueAdditions.h */,
+				5343F30718CE8DE400544BD0 /* NSMutableArray+QueueAdditions.m */,
+				53E23F5D18CD85CD00CD0B7B /* XYZMenuViewController.h */,
+				53E23F5E18CD85CD00CD0B7B /* XYZMenuViewController.m */,
 				939AB52F18B5ACEB00A249CC /* XYZColorUIView.h */,
 				939AB53018B5ACEB00A249CC /* XYZColorUIView.m */,
 				9399D67118B4DF6E000324E7 /* Images.xcassets */,
@@ -265,12 +270,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93D7F9E018BCC75F00492E78 /* XYZViewController.m in Sources */,
 				939AB53118B5ACEB00A249CC /* XYZColorUIView.m in Sources */,
 				9399D66A18B4DF6E000324E7 /* XYZAppDelegate.m in Sources */,
-				939AB52B18B5AA0B00A249CC /* XYZColorChangeViewController.m in Sources */,
+				939AB52B18B5AA0B00A249CC /* XYZMini1ViewController.m in Sources */,
+				53E23F5F18CD85CD00CD0B7B /* XYZMenuViewController.m in Sources */,
 				9399D66618B4DF6E000324E7 /* main.m in Sources */,
 				939AB52E18B5AC9500A249CC /* xyzUIview.m in Sources */,
+				5343F30818CE8DE400544BD0 /* NSMutableArray+QueueAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
