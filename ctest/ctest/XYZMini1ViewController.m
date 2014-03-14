@@ -104,8 +104,8 @@
     if(!self.started){
     self.started = true;
     self.startTime = CACurrentMediaTime();
-    self.topView.backgroundColor = UIColorFromRGB(0x34495e);
-    self.bottomView.backgroundColor = UIColorFromRGB(0x34495e);
+    self.topView.backgroundColor = UIColorFromRGB(0xecf0f1);
+    self.bottomView.backgroundColor = UIColorFromRGB(0xecf0f1);
         [self.readyButton setTitle:@"GO!!!" forState:UIControlStateNormal];
     }
 }
