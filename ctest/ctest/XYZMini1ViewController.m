@@ -95,8 +95,8 @@
     self.bottomTextBox.text = @"";
     self.bottomTimeBox.text = @"";
     
-    self.topView.backgroundColor = [UIColor whiteColor];
-    self.bottomView.backgroundColor = [UIColor whiteColor];
+    self.topView.backgroundColor = UIColorFromRGB(0x34495e);
+    self.bottomView.backgroundColor = UIColorFromRGB(0x34495e);
 }
 
 // GO!!!
@@ -104,8 +104,8 @@
     if(!self.started){
     self.started = true;
     self.startTime = CACurrentMediaTime();
-    self.topView.backgroundColor = [UIColor blueColor];
-    self.bottomView.backgroundColor = [UIColor blueColor];
+    self.topView.backgroundColor = UIColorFromRGB(0x34495e);
+    self.bottomView.backgroundColor = UIColorFromRGB(0x34495e);
         [self.readyButton setTitle:@"GO!!!" forState:UIControlStateNormal];
     }
 }
@@ -121,12 +121,12 @@
         //bottom wins
         if (!self.topTapped){
             self.bottomTextBox.text = @"You won!";
-            self.bottomView.backgroundColor = [UIColor greenColor];
+            self.bottomView.backgroundColor = UIColorFromRGB(0x2ecc71);
         }
         
         //top wins
         else {
-            self.bottomView.backgroundColor = [UIColor redColor];
+            self.bottomView.backgroundColor = UIColorFromRGB(0x2ecc71);
             self.bottomTextBox.text = @"You Lost";
             [self.readyButton setTitle:@"NEXT" forState:UIControlStateNormal];
             self.readyButton.enabled = YES;
