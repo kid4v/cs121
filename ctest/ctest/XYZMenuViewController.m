@@ -7,6 +7,7 @@
 //
 
 #import "XYZMenuViewController.h"
+#import "XYZSummaryViewController.h"
 
 
 @interface XYZMenuViewController ()
@@ -47,34 +48,39 @@
 
 //updates the display that previews the game session to be played.
 - (void) update {
-    NSString * preview = [[self.gameSession valueForKey:@"description"] componentsJoinedByString:@""];
+    //space out array into string
+    NSString * preview = [[self.gameSession valueForKey:@"description"] componentsJoinedByString:@" "];
     self.sessionPreview.text = preview;
 }
 
 //add a minigame #1 to the session.
 - (IBAction)mini1:(id)sender {
-    [self.gameSession enqueue:@1];
-    [self update];
+    if ([self.gameSession count] < 10) {
+        [self.gameSession enqueue:@1];
+        [self update];
+    }
+    else {
+        [self.sessionPreview setTextColor:[UIColor redColor]];
+        [self performSelector:@selector(resetColor) withObject:nil afterDelay:0.1];
+
+    }
 }
 
-//Register2ViewController *destViewController = segue.destinationViewController;
-//destViewController.textArraysParsed = textArrays;
-//NSLog(@"destViewController Array %@", destViewController.textArraysParsed);
-//}
+- (void) resetColor {
+    [self.sessionPreview setTextColor:[UIColor blackColor]];
+}
 
-//essentially passes the gameSession array along the segue
+//passes the gameSession array along the segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:@"1"]){
-        XYZMini1ViewController *destViewController = (XYZMini1ViewController *)segue.destinationViewController;
-        destViewController.gameSession = self.gameSession;
-    }
+    XYZSummaryViewController *destViewController = (XYZSummaryViewController *)segue.destinationViewController;
+    destViewController.gameSession = self.gameSession;
 }
 
 - (IBAction)startSession:(id)sender {
     if ([self.gameSession count] == 0) {
         self.sessionPreview.text = @"Add a game first!";
     } else {
-        NSString * segue = [NSString stringWithFormat: @"%@", [self.gameSession dequeue]];
+        NSString * segue = [NSString stringWithFormat: @"start%@", [self.gameSession dequeue]];
         [self performSegueWithIdentifier:segue sender:sender];
     }
 }

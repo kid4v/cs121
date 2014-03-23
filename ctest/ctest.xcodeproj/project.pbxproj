@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B1B6ED718DE3CED00C161A6 /* XYZSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B6ED618DE3CED00C161A6 /* XYZSummaryViewController.m */; };
 		53E23F5F18CD85CD00CD0B7B /* XYZMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E23F5E18CD85CD00CD0B7B /* XYZMenuViewController.m */; };
 		53FBE72A18CF803D00D606D5 /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FBE72918CF803D00D606D5 /* NSMutableArray+QueueAdditions.m */; };
 		9399D65A18B4DF6E000324E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9399D65918B4DF6E000324E7 /* Foundation.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B1B6ED518DE3CED00C161A6 /* XYZSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSummaryViewController.h; sourceTree = "<group>"; };
+		0B1B6ED618DE3CED00C161A6 /* XYZSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSummaryViewController.m; sourceTree = "<group>"; };
 		53E23F5D18CD85CD00CD0B7B /* XYZMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZMenuViewController.h; sourceTree = "<group>"; };
 		53E23F5E18CD85CD00CD0B7B /* XYZMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZMenuViewController.m; sourceTree = "<group>"; };
 		53FBE72818CF803D00D606D5 /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
@@ -133,6 +136,8 @@
 				9399D66B18B4DF6E000324E7 /* Main.storyboard */,
 				939AB52918B5AA0B00A249CC /* XYZMini1ViewController.h */,
 				939AB52A18B5AA0B00A249CC /* XYZMini1ViewController.m */,
+				0B1B6ED518DE3CED00C161A6 /* XYZSummaryViewController.h */,
+				0B1B6ED618DE3CED00C161A6 /* XYZSummaryViewController.m */,
 				53E23F5D18CD85CD00CD0B7B /* XYZMenuViewController.h */,
 				53E23F5E18CD85CD00CD0B7B /* XYZMenuViewController.m */,
 				939AB52F18B5ACEB00A249CC /* XYZColorUIView.h */,
@@ -270,6 +275,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B1B6ED718DE3CED00C161A6 /* XYZSummaryViewController.m in Sources */,
 				939AB53118B5ACEB00A249CC /* XYZColorUIView.m in Sources */,
 				9399D66A18B4DF6E000324E7 /* XYZAppDelegate.m in Sources */,
 				939AB52B18B5AA0B00A249CC /* XYZMini1ViewController.m in Sources */,

@@ -6,6 +6,7 @@
 //  Copyright (c) 2014 CS121. All rights reserved.
 //
 #import "XYZMini1ViewController.h"
+#import "XYZSummaryViewController.h"
 
 @interface XYZMini1ViewController ()
 @property Boolean started;
@@ -53,10 +54,8 @@
 - (IBAction)gamesStart:(id)sender {
     if (!self.started){
         [self.readyButton setTitle:@"SET..." forState:UIControlStateNormal];
-//        NSLog(@"%@", self.readyButton.titleLabel.text);
         self.readyButton.enabled = NO;
         double waitTime = ((double)rand() / RAND_MAX) * 3 + 1;
-        //NSLog(@"%f", waitTime);
         [NSTimer scheduledTimerWithTimeInterval:waitTime target:self
                                        selector:@selector(start:)
                                        userInfo:nil
@@ -106,6 +105,8 @@
     self.startTime = CACurrentMediaTime();
     self.topView.backgroundColor = UIColorFromRGB(0xecf0f1);
     self.bottomView.backgroundColor = UIColorFromRGB(0xecf0f1);
+        
+        //BROKEN!!!
         [self.readyButton setTitle:@"GO!!!" forState:UIControlStateNormal];
     }
 }
@@ -117,7 +118,8 @@
         self.bottomTapped = true;
         CFTimeInterval currentTime = CACurrentMediaTime();
         CFTimeInterval elapsedTime = currentTime - self.startTime;
-
+        NSInteger elapsedMs = elapsedTime * 1000;
+        
         //bottom wins
         if (!self.topTapped){
             self.bottomTextBox.text = @"You won!";
@@ -126,13 +128,16 @@
         
         //top wins
         else {
-            self.bottomView.backgroundColor = UIColorFromRGB(0x2ecc71);
+            self.bottomView.backgroundColor = [UIColor redColor];
             self.bottomTextBox.text = @"You Lost";
-            [self.readyButton setTitle:@"NEXT" forState:UIControlStateNormal];
-            self.readyButton.enabled = YES;
+            [self.readyButton setTitle:@"" forState:UIControlStateNormal];
+
+            //wait 2 sec before segue back to summary view
+            [self performSelector:@selector(segueBack) withObject:nil afterDelay:2.5];
+
         }
 
-        self.bottomTimeBox.text = [NSString stringWithFormat:@"%f",elapsedTime];
+        self.bottomTimeBox.text = [NSString stringWithFormat:@"%d ms", elapsedMs];
     }
     else if (!self.started && !self.bottomTapped){
         [self misFireFrom:self.bottomTextBox and:self.topTextBox];
@@ -145,11 +150,12 @@
 if (!self.topTapped && self.started){
     self.topTapped = true;
     CFTimeInterval currentTime = CACurrentMediaTime();
-    CFTimeInterval howFast = currentTime - self.startTime ;
+    CFTimeInterval elapsedTime = currentTime - self.startTime;
+    NSInteger elapsedMs = elapsedTime * 1000;
     
     //top wins
     if (!self.bottomTapped){
-        self.topView.backgroundColor = [UIColor greenColor];
+        self.topView.backgroundColor = UIColorFromRGB(0x2ecc71);
         [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
         self.topTextBox.text = @"You won!";
         }
@@ -158,12 +164,14 @@ if (!self.topTapped && self.started){
         self.topView.backgroundColor = [UIColor redColor];
         [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
         self.topTextBox.text = @"You Lost";
-        [self.readyButton setTitle:@"NEXT" forState:UIControlStateNormal];
-        self.readyButton.enabled = YES;
+        [self.readyButton setTitle:@"" forState:UIControlStateNormal];
+        
+        //wait 2 sec before segue back to summary view
+        [self performSelector:@selector(segueBack) withObject:nil afterDelay:2.5];
     }
     
     [self.topTimeBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
-    self.topTimeBox.text = [NSString stringWithFormat:@"%f",howFast];
+    self.topTimeBox.text = [NSString stringWithFormat:@"%d ms",elapsedMs];
 }
 else if (!self.started && !self.topTapped){
     [self misFireFrom:self.topTextBox and:self.bottomTextBox];
@@ -178,9 +186,21 @@ else if (!self.started && !self.topTapped){
     self.topView.backgroundColor = [UIColor redColor];
     self.bottomView.backgroundColor = [UIColor redColor];
     [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
-    winner.text = @"Other played misfired you win!";
-    loser.text = @"Misfire, You lose!";
-    [self.readyButton setTitle:@"NEXT" forState:UIControlStateNormal];
-    self.readyButton.enabled = YES;
+    winner.text = @"Misfire—you win!";
+    loser.text = @"Misfire—you lose!";
+    [self.readyButton setTitle:@"" forState:UIControlStateNormal];
+    
+    //wait 2 sec before segue back to summary view
+    [self performSelector:@selector(segueBack) withObject:nil afterDelay:2.5];
+}
+
+-(void) segueBack {
+    [self performSegueWithIdentifier:@"from1" sender:self];
+}
+
+//passes the gameSession array along the segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    XYZSummaryViewController *destViewController = (XYZSummaryViewController *)segue.destinationViewController;
+    destViewController.gameSession = self.gameSession;
 }
 @end
