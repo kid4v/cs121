@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B1B6ED718DE3CED00C161A6 /* XYZSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B6ED618DE3CED00C161A6 /* XYZSummaryViewController.m */; };
+		289EC8E218E1338F004FCABB /* Moon_Flower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 289EC8E118E1338F004FCABB /* Moon_Flower.ttf */; };
+		289EC8E518E13BFC004FCABB /* Moon_Flower_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 289EC8E418E13BFC004FCABB /* Moon_Flower_Bold.ttf */; };
 		53E23F5F18CD85CD00CD0B7B /* XYZMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E23F5E18CD85CD00CD0B7B /* XYZMenuViewController.m */; };
 		53FBE72A18CF803D00D606D5 /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FBE72918CF803D00D606D5 /* NSMutableArray+QueueAdditions.m */; };
 		9399D65A18B4DF6E000324E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9399D65918B4DF6E000324E7 /* Foundation.framework */; };
@@ -41,6 +43,8 @@
 /* Begin PBXFileReference section */
 		0B1B6ED518DE3CED00C161A6 /* XYZSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSummaryViewController.h; sourceTree = "<group>"; };
 		0B1B6ED618DE3CED00C161A6 /* XYZSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSummaryViewController.m; sourceTree = "<group>"; };
+		289EC8E118E1338F004FCABB /* Moon_Flower.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Moon_Flower.ttf; sourceTree = "<group>"; };
+		289EC8E418E13BFC004FCABB /* Moon_Flower_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Moon_Flower_Bold.ttf; sourceTree = "<group>"; };
 		53E23F5D18CD85CD00CD0B7B /* XYZMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZMenuViewController.h; sourceTree = "<group>"; };
 		53E23F5E18CD85CD00CD0B7B /* XYZMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZMenuViewController.m; sourceTree = "<group>"; };
 		53FBE72818CF803D00D606D5 /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
@@ -94,9 +98,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		289EC8E318E13398004FCABB /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				289EC8E418E13BFC004FCABB /* Moon_Flower_Bold.ttf */,
+				289EC8E118E1338F004FCABB /* Moon_Flower.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		9399D64D18B4DF6E000324E7 = {
 			isa = PBXGroup;
 			children = (
+				289EC8E318E13398004FCABB /* Resources */,
 				939AB52C18B5AC9500A249CC /* xyzUIview.h */,
 				939AB52D18B5AC9500A249CC /* xyzUIview.m */,
 				9399D65F18B4DF6E000324E7 /* ctest */,
@@ -254,9 +268,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				289EC8E518E13BFC004FCABB /* Moon_Flower_Bold.ttf in Resources */,
 				9399D67218B4DF6E000324E7 /* Images.xcassets in Resources */,
 				9399D66418B4DF6E000324E7 /* InfoPlist.strings in Resources */,
 				9399D66D18B4DF6E000324E7 /* Main.storyboard in Resources */,
+				289EC8E218E1338F004FCABB /* Moon_Flower.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

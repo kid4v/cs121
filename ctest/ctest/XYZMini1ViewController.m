@@ -32,6 +32,8 @@
     if (self) {
 
         // Custom initialization
+		NSLog(@"Hi!!!!");
+
     }
     return self;
 }
@@ -41,6 +43,13 @@
     [super viewDidLoad];
     [self setup];
 	// Do any additional setup after loading the view.
+	
+	//Fonts
+	self.readyButton.titleLabel.font = [UIFont fontWithName:@"MoonFlowerBold" size: 57];
+	self.topTextBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 38];
+	self.bottomTextBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 38];
+	self.topTimeBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 35];
+	self.bottomTimeBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 35];
 
 }
 
@@ -93,7 +102,8 @@
     self.topTimeBox.text = @"";
     self.bottomTextBox.text = @"";
     self.bottomTimeBox.text = @"";
-    
+	
+
     self.topView.backgroundColor = UIColorFromRGB(0x34495e);
     self.bottomView.backgroundColor = UIColorFromRGB(0x34495e);
 }
@@ -103,10 +113,12 @@
     if(!self.started){
     self.started = true;
     self.startTime = CACurrentMediaTime();
+		
     self.topView.backgroundColor = UIColorFromRGB(0xecf0f1);
     self.bottomView.backgroundColor = UIColorFromRGB(0xecf0f1);
         
         //BROKEN!!!
+
         [self.readyButton setTitle:@"GO!!!" forState:UIControlStateNormal];
     }
 }

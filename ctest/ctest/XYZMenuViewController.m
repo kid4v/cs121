@@ -61,7 +61,7 @@
     }
     else {
         [self.sessionPreview setTextColor:[UIColor redColor]];
-        [self performSelector:@selector(resetColor) withObject:nil afterDelay:0.1];
+        [self performSelector:@selector(resetColor) withObject:nil afterDelay:.1];
 
     }
 }
