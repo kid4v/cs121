@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "XYZColorUIView.h"
 #import "NSMutableArray+QueueAdditions.h"
+#import <AudioToolbox/AudioToolbox.h>
 
 //RGB color macro
 #define UIColorFromRGB(rgbValue) [UIColor \
@@ -17,6 +18,9 @@ green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @interface XYZMini1ViewController : UIViewController
+{
+	SystemSoundID misfireSoundID;
+}
 
 - (IBAction)onBottomPressed:(id)sender;
 - (IBAction)onTopPressed:(id)sender;

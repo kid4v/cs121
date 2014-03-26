@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0B1B6ED718DE3CED00C161A6 /* XYZSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B6ED618DE3CED00C161A6 /* XYZSummaryViewController.m */; };
+		281C9E8E18E2A5C100654696 /* beep_beep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 281C9E8D18E2A5C100654696 /* beep_beep.wav */; };
+		286B4EBE18E2A57800DEC2D5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 286B4EBD18E2A57800DEC2D5 /* AudioToolbox.framework */; };
 		289EC8E218E1338F004FCABB /* Moon_Flower.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 289EC8E118E1338F004FCABB /* Moon_Flower.ttf */; };
 		289EC8E518E13BFC004FCABB /* Moon_Flower_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 289EC8E418E13BFC004FCABB /* Moon_Flower_Bold.ttf */; };
 		53E23F5F18CD85CD00CD0B7B /* XYZMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E23F5E18CD85CD00CD0B7B /* XYZMenuViewController.m */; };
@@ -43,6 +45,8 @@
 /* Begin PBXFileReference section */
 		0B1B6ED518DE3CED00C161A6 /* XYZSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZSummaryViewController.h; sourceTree = "<group>"; };
 		0B1B6ED618DE3CED00C161A6 /* XYZSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZSummaryViewController.m; sourceTree = "<group>"; };
+		281C9E8D18E2A5C100654696 /* beep_beep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = beep_beep.wav; sourceTree = "<group>"; };
+		286B4EBD18E2A57800DEC2D5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		289EC8E118E1338F004FCABB /* Moon_Flower.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Moon_Flower.ttf; sourceTree = "<group>"; };
 		289EC8E418E13BFC004FCABB /* Moon_Flower_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Moon_Flower_Bold.ttf; sourceTree = "<group>"; };
 		53E23F5D18CD85CD00CD0B7B /* XYZMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZMenuViewController.h; sourceTree = "<group>"; };
@@ -79,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				286B4EBE18E2A57800DEC2D5 /* AudioToolbox.framework in Frameworks */,
 				9399D65C18B4DF6E000324E7 /* CoreGraphics.framework in Frameworks */,
 				9399D65E18B4DF6E000324E7 /* UIKit.framework in Frameworks */,
 				9399D65A18B4DF6E000324E7 /* Foundation.framework in Frameworks */,
@@ -132,6 +137,7 @@
 		9399D65818B4DF6E000324E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				286B4EBD18E2A57800DEC2D5 /* AudioToolbox.framework */,
 				9399D65918B4DF6E000324E7 /* Foundation.framework */,
 				9399D65B18B4DF6E000324E7 /* CoreGraphics.framework */,
 				9399D65D18B4DF6E000324E7 /* UIKit.framework */,
@@ -166,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				9399D66118B4DF6E000324E7 /* ctest-Info.plist */,
+				281C9E8D18E2A5C100654696 /* beep_beep.wav */,
 				9399D66218B4DF6E000324E7 /* InfoPlist.strings */,
 				9399D66518B4DF6E000324E7 /* main.m */,
 				9399D66718B4DF6E000324E7 /* ctest-Prefix.pch */,
@@ -268,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				281C9E8E18E2A5C100654696 /* beep_beep.wav in Resources */,
 				289EC8E518E13BFC004FCABB /* Moon_Flower_Bold.ttf in Resources */,
 				9399D67218B4DF6E000324E7 /* Images.xcassets in Resources */,
 				9399D66418B4DF6E000324E7 /* InfoPlist.strings in Resources */,

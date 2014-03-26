@@ -50,6 +50,10 @@
 	self.bottomTextBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 38];
 	self.topTimeBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 35];
 	self.bottomTimeBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 35];
+	
+	//Sounds
+	NSURL *misfireSoundURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"beep_beep" ofType: @"wav"]];
+	AudioServicesCreateSystemSoundID((__bridge CFURLRef) misfireSoundURL, &misfireSoundID);
 
 }
 
@@ -201,7 +205,8 @@ else if (!self.started && !self.topTapped){
     winner.text = @"Misfire—you win!";
     loser.text = @"Misfire—you lose!";
     [self.readyButton setTitle:@"" forState:UIControlStateNormal];
-    
+    AudioServicesPlaySystemSound(misfireSoundID);
+	
     //wait 2 sec before segue back to summary view
     [self performSelector:@selector(segueBack) withObject:nil afterDelay:2.5];
 }
