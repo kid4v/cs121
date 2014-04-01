@@ -8,7 +8,9 @@
 #import "XYZMini1ViewController.h"
 #import "XYZSummaryViewController.h"
 
+
 @interface XYZMini1ViewController ()
+
 @property Boolean started;
 @property (weak, nonatomic) IBOutlet XYZColorUIView *topView;
 @property (weak, nonatomic) IBOutlet XYZColorUIView *bottomView;
@@ -22,6 +24,10 @@
 @property CFTimeInterval startTime;
 
 
+
+
+
+
 @end
 
 @implementation XYZMini1ViewController
@@ -32,7 +38,7 @@
     if (self) {
 
         // Custom initialization
-		NSLog(@"Hi!!!!");
+		
 
     }
     return self;
@@ -44,16 +50,25 @@
     [self setup];
 	// Do any additional setup after loading the view.
 	
-	//Fonts
+	// Fonts:
 	self.readyButton.titleLabel.font = [UIFont fontWithName:@"MoonFlowerBold" size: 57];
 	self.topTextBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 38];
 	self.bottomTextBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 38];
 	self.topTimeBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 35];
 	self.bottomTimeBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 35];
-	
-	//Sounds
+	// Misfire Sound
 	NSURL *misfireSoundURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"beep_beep" ofType: @"wav"]];
 	AudioServicesCreateSystemSoundID((__bridge CFURLRef) misfireSoundURL, &misfireSoundID);
+	// Background Sound
+	NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/God.mp3", [[NSBundle mainBundle] resourcePath]]];
+	backgroundMusicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+	backgroundMusicPlayer.numberOfLoops = -1;
+	
+	if (backgroundMusicPlayer == nil)
+		NSLog(@"Error loading background music");
+	else
+		[backgroundMusicPlayer play];
+	
 
 }
 
@@ -208,10 +223,12 @@ else if (!self.started && !self.topTapped){
     AudioServicesPlaySystemSound(misfireSoundID);
 	
     //wait 2 sec before segue back to summary view
+
     [self performSelector:@selector(segueBack) withObject:nil afterDelay:2.5];
 }
 
 -(void) segueBack {
+	[backgroundMusicPlayer stop];
     [self performSegueWithIdentifier:@"from1" sender:self];
 }
 

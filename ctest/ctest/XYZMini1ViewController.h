@@ -10,6 +10,7 @@
 #import "XYZColorUIView.h"
 #import "NSMutableArray+QueueAdditions.h"
 #import <AudioToolbox/AudioToolbox.h>
+#import <AVFoundation/AVFoundation.h>
 
 //RGB color macro
 #define UIColorFromRGB(rgbValue) [UIColor \
@@ -20,6 +21,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @interface XYZMini1ViewController : UIViewController
 {
 	SystemSoundID misfireSoundID;
+	SystemSoundID backgroundSoundID;
+	AVAudioPlayer *backgroundMusicPlayer;
 }
 
 - (IBAction)onBottomPressed:(id)sender;
@@ -27,5 +30,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (IBAction)gamesStart:(id)sender;
 
 @property (nonatomic) NSMutableArray* gameSession;
+
 
 @end
