@@ -66,7 +66,7 @@
 		9399D66818B4DF6E000324E7 /* XYZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZAppDelegate.h; sourceTree = "<group>"; };
 		9399D66918B4DF6E000324E7 /* XYZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZAppDelegate.m; sourceTree = "<group>"; };
 		9399D66C18B4DF6E000324E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		9399D67118B4DF6E000324E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9399D67118B4DF6E000324E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ctest/Images.xcassets; sourceTree = "<group>"; };
 		9399D67718B4DF6E000324E7 /* ctestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ctestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9399D67818B4DF6E000324E7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		9399D68018B4DF6E000324E7 /* ctestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ctestTests-Info.plist"; sourceTree = "<group>"; };
@@ -106,9 +106,86 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BC8CEAB18F0B069001FF7F1 /* NSMutableArray + Queuing */ = {
+			isa = PBXGroup;
+			children = (
+				53FBE72818CF803D00D606D5 /* NSMutableArray+QueueAdditions.h */,
+				53FBE72918CF803D00D606D5 /* NSMutableArray+QueueAdditions.m */,
+			);
+			name = "NSMutableArray + Queuing";
+			path = ctest;
+			sourceTree = "<group>";
+		};
+		0BC8CEAC18F0B093001FF7F1 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9399D66818B4DF6E000324E7 /* XYZAppDelegate.h */,
+				9399D66918B4DF6E000324E7 /* XYZAppDelegate.m */,
+			);
+			name = AppDelegate;
+			path = ctest;
+			sourceTree = "<group>";
+		};
+		0BC8CEAD18F0B0AB001FF7F1 /* Minigame 1 View */ = {
+			isa = PBXGroup;
+			children = (
+				939AB52918B5AA0B00A249CC /* XYZMini1ViewController.h */,
+				939AB52A18B5AA0B00A249CC /* XYZMini1ViewController.m */,
+			);
+			name = "Minigame 1 View";
+			path = ctest;
+			sourceTree = "<group>";
+		};
+		0BC8CEAE18F0B0C4001FF7F1 /* Summary View */ = {
+			isa = PBXGroup;
+			children = (
+				0B1B6ED518DE3CED00C161A6 /* XYZSummaryViewController.h */,
+				0B1B6ED618DE3CED00C161A6 /* XYZSummaryViewController.m */,
+			);
+			name = "Summary View";
+			path = ctest;
+			sourceTree = "<group>";
+		};
+		0BC8CEAF18F0B0D3001FF7F1 /* Color View */ = {
+			isa = PBXGroup;
+			children = (
+				939AB52F18B5ACEB00A249CC /* XYZColorUIView.h */,
+				939AB53018B5ACEB00A249CC /* XYZColorUIView.m */,
+			);
+			name = "Color View";
+			path = ctest;
+			sourceTree = "<group>";
+		};
+		0BC8CEB018F0B0EA001FF7F1 /* Menu View */ = {
+			isa = PBXGroup;
+			children = (
+				53E23F5D18CD85CD00CD0B7B /* XYZMenuViewController.h */,
+				53E23F5E18CD85CD00CD0B7B /* XYZMenuViewController.m */,
+			);
+			name = "Menu View";
+			path = ctest;
+			sourceTree = "<group>";
+		};
+		0BC8CEB118F0B20A001FF7F1 /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				9399D66B18B4DF6E000324E7 /* Main.storyboard */,
+				0BC8CEB018F0B0EA001FF7F1 /* Menu View */,
+				0BC8CEAE18F0B0C4001FF7F1 /* Summary View */,
+				0BC8CEAD18F0B0AB001FF7F1 /* Minigame 1 View */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
 		289EC8E318E13398004FCABB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0BC8CEAF18F0B0D3001FF7F1 /* Color View */,
+				9399D67118B4DF6E000324E7 /* Images.xcassets */,
+				0BC8CEAB18F0B069001FF7F1 /* NSMutableArray + Queuing */,
+				9399D66018B4DF6E000324E7 /* Supporting Files */,
+				939AB52C18B5AC9500A249CC /* xyzUIview.h */,
+				939AB52D18B5AC9500A249CC /* xyzUIview.m */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -117,9 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				289EC8E318E13398004FCABB /* Resources */,
-				939AB52C18B5AC9500A249CC /* xyzUIview.h */,
-				939AB52D18B5AC9500A249CC /* xyzUIview.m */,
-				9399D65F18B4DF6E000324E7 /* ctest */,
+				0BC8CEB118F0B20A001FF7F1 /* Game */,
+				0BC8CEAC18F0B093001FF7F1 /* AppDelegate */,
 				9399D67E18B4DF6E000324E7 /* ctestTests */,
 				9399D65818B4DF6E000324E7 /* Frameworks */,
 				9399D65718B4DF6E000324E7 /* Products */,
@@ -148,28 +224,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9399D65F18B4DF6E000324E7 /* ctest */ = {
-			isa = PBXGroup;
-			children = (
-				53FBE72818CF803D00D606D5 /* NSMutableArray+QueueAdditions.h */,
-				53FBE72918CF803D00D606D5 /* NSMutableArray+QueueAdditions.m */,
-				9399D66818B4DF6E000324E7 /* XYZAppDelegate.h */,
-				9399D66918B4DF6E000324E7 /* XYZAppDelegate.m */,
-				9399D66B18B4DF6E000324E7 /* Main.storyboard */,
-				939AB52918B5AA0B00A249CC /* XYZMini1ViewController.h */,
-				939AB52A18B5AA0B00A249CC /* XYZMini1ViewController.m */,
-				0B1B6ED518DE3CED00C161A6 /* XYZSummaryViewController.h */,
-				0B1B6ED618DE3CED00C161A6 /* XYZSummaryViewController.m */,
-				53E23F5D18CD85CD00CD0B7B /* XYZMenuViewController.h */,
-				53E23F5E18CD85CD00CD0B7B /* XYZMenuViewController.m */,
-				939AB52F18B5ACEB00A249CC /* XYZColorUIView.h */,
-				939AB53018B5ACEB00A249CC /* XYZColorUIView.m */,
-				9399D67118B4DF6E000324E7 /* Images.xcassets */,
-				9399D66018B4DF6E000324E7 /* Supporting Files */,
-			);
-			path = ctest;
-			sourceTree = "<group>";
-		};
 		9399D66018B4DF6E000324E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +236,7 @@
 				9399D66718B4DF6E000324E7 /* ctest-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			path = ctest;
 			sourceTree = "<group>";
 		};
 		9399D67E18B4DF6E000324E7 /* ctestTests */ = {
@@ -347,6 +402,7 @@
 				9399D66C18B4DF6E000324E7 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ctest;
 			sourceTree = "<group>";
 		};
 		9399D68118B4DF6E000324E7 /* InfoPlist.strings */ = {
