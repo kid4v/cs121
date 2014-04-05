@@ -17,6 +17,10 @@
 @property NSMutableArray * topScore;
 @property NSMutableArray * bottomScore;
 
+@property (weak, nonatomic) IBOutlet UITextView *topScoreText;
+@property (weak, nonatomic) IBOutlet UITextView *bottomScoreText;
+
+
 - (IBAction)next:(id)sender;
 
 @end

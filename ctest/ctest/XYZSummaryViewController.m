@@ -30,6 +30,8 @@
     if ([self.gameSession count] == 0) {
         [self.nextButton setTitle:@"GAME OVER" forState:UIControlStateNormal];
         self.nextButton.enabled = NO;
+//        [self.topScoreText setText:@"sklafjdksaljfdklsajfdklajdklajfdklajfkldasjdas"];
+//        [self.topScoreLabel sizeToFit];
     } else {
         
     }

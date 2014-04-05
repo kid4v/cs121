@@ -43,11 +43,11 @@
 	// Do any additional setup after loading the view.
 	
 	// Fonts:
-	self.readyButton.titleLabel.font = [UIFont fontWithName:@"MoonFlowerBold" size: 57];
-	self.topTextBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 38];
-	self.bottomTextBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 38];
-	self.topTimeBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 35];
-	self.bottomTimeBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 35];
+//	self.readyButton.titleLabel.font = [UIFont fontWithName:@"MoonFlowerBold" size: 57];
+//	self.topTextBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 38];
+//	self.bottomTextBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 38];
+//	self.topTimeBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 35];
+//	self.bottomTimeBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 35];
 	// Misfire Sound
 	NSURL *misfireSoundURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"beep_beep" ofType: @"wav"]];
 	AudioServicesCreateSystemSoundID((__bridge CFURLRef) misfireSoundURL, &misfireSoundID);
