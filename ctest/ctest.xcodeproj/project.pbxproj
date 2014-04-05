@@ -55,21 +55,21 @@
 		53E23F5E18CD85CD00CD0B7B /* XYZMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZMenuViewController.m; sourceTree = "<group>"; };
 		53FBE72818CF803D00D606D5 /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
 		53FBE72918CF803D00D606D5 /* NSMutableArray+QueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+QueueAdditions.m"; sourceTree = "<group>"; };
-		9399D65618B4DF6E000324E7 /* reflex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reflex.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9399D65618B4DF6E000324E7 /* ctest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ctest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9399D65918B4DF6E000324E7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9399D65B18B4DF6E000324E7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9399D65D18B4DF6E000324E7 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9399D66118B4DF6E000324E7 /* ctest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ctest-Info.plist"; sourceTree = "<group>"; };
 		9399D66318B4DF6E000324E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9399D66518B4DF6E000324E7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9399D66718B4DF6E000324E7 /* reflex-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "reflex-Prefix.pch"; sourceTree = "<group>"; };
+		9399D66718B4DF6E000324E7 /* ctest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ctest-Prefix.pch"; sourceTree = "<group>"; };
 		9399D66818B4DF6E000324E7 /* XYZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYZAppDelegate.h; sourceTree = "<group>"; };
 		9399D66918B4DF6E000324E7 /* XYZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYZAppDelegate.m; sourceTree = "<group>"; };
 		9399D66C18B4DF6E000324E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9399D67118B4DF6E000324E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9399D67718B4DF6E000324E7 /* reflexTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = reflexTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9399D67718B4DF6E000324E7 /* ctestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ctestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9399D67818B4DF6E000324E7 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		9399D68018B4DF6E000324E7 /* reflexTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "reflexTests-Info.plist"; sourceTree = "<group>"; };
+		9399D68018B4DF6E000324E7 /* ctestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ctestTests-Info.plist"; sourceTree = "<group>"; };
 		9399D68218B4DF6E000324E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9399D68418B4DF6E000324E7 /* ctestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ctestTests.m; sourceTree = "<group>"; };
 		939AB52918B5AA0B00A249CC /* XYZMini1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZMini1ViewController.h; sourceTree = "<group>"; };
@@ -129,8 +129,8 @@
 		9399D65718B4DF6E000324E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9399D65618B4DF6E000324E7 /* reflex.app */,
-				9399D67718B4DF6E000324E7 /* reflexTests.xctest */,
+				9399D65618B4DF6E000324E7 /* ctest.app */,
+				9399D67718B4DF6E000324E7 /* ctestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,7 +179,7 @@
 				281C9E8D18E2A5C100654696 /* beep_beep.wav */,
 				9399D66218B4DF6E000324E7 /* InfoPlist.strings */,
 				9399D66518B4DF6E000324E7 /* main.m */,
-				9399D66718B4DF6E000324E7 /* reflex-Prefix.pch */,
+				9399D66718B4DF6E000324E7 /* ctest-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -196,7 +196,7 @@
 		9399D67F18B4DF6E000324E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9399D68018B4DF6E000324E7 /* reflexTests-Info.plist */,
+				9399D68018B4DF6E000324E7 /* ctestTests-Info.plist */,
 				9399D68118B4DF6E000324E7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -205,9 +205,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9399D65518B4DF6E000324E7 /* reflex */ = {
+		9399D65518B4DF6E000324E7 /* ctest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9399D68818B4DF6E000324E7 /* Build configuration list for PBXNativeTarget "reflex" */;
+			buildConfigurationList = 9399D68818B4DF6E000324E7 /* Build configuration list for PBXNativeTarget "ctest" */;
 			buildPhases = (
 				9399D65218B4DF6E000324E7 /* Sources */,
 				9399D65318B4DF6E000324E7 /* Frameworks */,
@@ -217,14 +217,14 @@
 			);
 			dependencies = (
 			);
-			name = reflex;
+			name = ctest;
 			productName = ctest;
-			productReference = 9399D65618B4DF6E000324E7 /* reflex.app */;
+			productReference = 9399D65618B4DF6E000324E7 /* ctest.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9399D67618B4DF6E000324E7 /* reflexTests */ = {
+		9399D67618B4DF6E000324E7 /* ctestTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9399D68B18B4DF6E000324E7 /* Build configuration list for PBXNativeTarget "reflexTests" */;
+			buildConfigurationList = 9399D68B18B4DF6E000324E7 /* Build configuration list for PBXNativeTarget "ctestTests" */;
 			buildPhases = (
 				9399D67318B4DF6E000324E7 /* Sources */,
 				9399D67418B4DF6E000324E7 /* Frameworks */,
@@ -235,9 +235,9 @@
 			dependencies = (
 				9399D67D18B4DF6E000324E7 /* PBXTargetDependency */,
 			);
-			name = reflexTests;
+			name = ctestTests;
 			productName = ctestTests;
-			productReference = 9399D67718B4DF6E000324E7 /* reflexTests.xctest */;
+			productReference = 9399D67718B4DF6E000324E7 /* ctestTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -255,7 +255,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9399D65118B4DF6E000324E7 /* Build configuration list for PBXProject "reflex" */;
+			buildConfigurationList = 9399D65118B4DF6E000324E7 /* Build configuration list for PBXProject "ctest" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -268,8 +268,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9399D65518B4DF6E000324E7 /* reflex */,
-				9399D67618B4DF6E000324E7 /* reflexTests */,
+				9399D65518B4DF6E000324E7 /* ctest */,
+				9399D67618B4DF6E000324E7 /* ctestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -327,7 +327,7 @@
 /* Begin PBXTargetDependency section */
 		9399D67D18B4DF6E000324E7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9399D65518B4DF6E000324E7 /* reflex */;
+			target = 9399D65518B4DF6E000324E7 /* ctest */;
 			targetProxy = 9399D67C18B4DF6E000324E7 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -438,9 +438,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ctest/reflex-Prefix.pch";
+				GCC_PREFIX_HEADER = "ctest/ctest-Prefix.pch";
 				INFOPLIST_FILE = "ctest/ctest-Info.plist";
-				PRODUCT_NAME = reflex;
+				PRODUCT_NAME = ctest;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -451,9 +451,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ctest/reflex-Prefix.pch";
+				GCC_PREFIX_HEADER = "ctest/ctest-Prefix.pch";
 				INFOPLIST_FILE = "ctest/ctest-Info.plist";
-				PRODUCT_NAME = reflex;
+				PRODUCT_NAME = ctest;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -474,8 +474,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "ctestTests/reflexTests-Info.plist";
-				PRODUCT_NAME = reflexTests;
+				INFOPLIST_FILE = "ctestTests/ctestTests-Info.plist";
+				PRODUCT_NAME = ctestTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -493,8 +493,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ctest/ctest-Prefix.pch";
-				INFOPLIST_FILE = "ctestTests/reflexTests-Info.plist";
-				PRODUCT_NAME = reflexTests;
+				INFOPLIST_FILE = "ctestTests/ctestTests-Info.plist";
+				PRODUCT_NAME = ctestTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -503,7 +503,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9399D65118B4DF6E000324E7 /* Build configuration list for PBXProject "reflex" */ = {
+		9399D65118B4DF6E000324E7 /* Build configuration list for PBXProject "ctest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9399D68618B4DF6E000324E7 /* Debug */,
@@ -512,7 +512,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9399D68818B4DF6E000324E7 /* Build configuration list for PBXNativeTarget "reflex" */ = {
+		9399D68818B4DF6E000324E7 /* Build configuration list for PBXNativeTarget "ctest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9399D68918B4DF6E000324E7 /* Debug */,
@@ -521,7 +521,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9399D68B18B4DF6E000324E7 /* Build configuration list for PBXNativeTarget "reflexTests" */ = {
+		9399D68B18B4DF6E000324E7 /* Build configuration list for PBXNativeTarget "ctestTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9399D68C18B4DF6E000324E7 /* Debug */,

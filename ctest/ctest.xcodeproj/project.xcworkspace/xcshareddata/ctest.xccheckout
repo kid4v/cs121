@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>190FED9A-F021-4866-9574-9BA2C4F59163</string>
+	<string>727C988F-5628-4CBE-80F2-CB9753D982CA</string>
 	<key>IDESourceControlProjectName</key>
 	<string>ctest</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -18,7 +18,7 @@
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>31906FAE-4130-4E39-B04E-DBEB3DCF747C</key>
-		<string>../../..</string>
+		<string>../../../../cs121-broken</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/kid4v/cs121.git</string>
@@ -28,6 +28,14 @@
 	<string>31906FAE-4130-4E39-B04E-DBEB3DCF747C</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>31906FAE-4130-4E39-B04E-DBEB3DCF747C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>cs121</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
