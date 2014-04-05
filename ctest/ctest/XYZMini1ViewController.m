@@ -23,11 +23,6 @@
 @property Boolean bottomTapped;
 @property CFTimeInterval startTime;
 
-
-
-
-
-
 @end
 
 @implementation XYZMini1ViewController
@@ -68,8 +63,6 @@
 		NSLog(@"Error loading background music");
 	else
 		[backgroundMusicPlayer play];
-	
-
 }
 
 
@@ -96,10 +89,10 @@
             [self.readyButton setTitle:@"GAME OVER" forState:UIControlStateNormal];
             self.readyButton.enabled = NO;
         } else {
-            NSString * segue = [NSString stringWithFormat: @"%@", [self.gameSession dequeue]];
+            NSString * segue;  // = [NSString stringWithFormat: @"%@", [self.gameSession dequeue]];
             //if next game is also 1, use self1 segue.
             if ([segue isEqualToString:@"1"]){
-                segue = [NSString stringWithFormat:@"self%@", segue];
+                segue = [NSString stringWithFormat:@"self%@", [self.gameSession dequeue]];
             }
             [self performSegueWithIdentifier:segue sender:sender];
         }

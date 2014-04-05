@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NSMutableArray+QueueAdditions.h"
 
 @interface XYZSummaryViewController : UIViewController
 
 @property (nonatomic) NSMutableArray* gameSession;
 
-@property NSInteger topScore;
-@property NSInteger bottomScore;
+//These are arrays of (NSInteger timeInMs, Boolean didWin)
+@property NSMutableArray * topScore;
+@property NSMutableArray * bottomScore;
 
 - (IBAction)next:(id)sender;
 
