@@ -31,5 +31,9 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @property (nonatomic) NSMutableArray* gameSession;
 
+//These are arrays of (NSInteger timeInMs, Boolean didWin) tuples.
+@property NSMutableArray * topScore;
+@property NSMutableArray * bottomScore;
+
 
 @end

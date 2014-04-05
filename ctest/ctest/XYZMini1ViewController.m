@@ -31,10 +31,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
         // Custom initialization
-		
-
     }
     return self;
 }
@@ -135,6 +132,11 @@
     }
 }
 
+- (void) addScore:(NSInteger)timeElapsed to:(NSMutableArray*)scoreArray with:(Boolean)didWin {
+    NSArray * pair = @[[NSNumber numberWithInt:timeElapsed], [NSNumber numberWithBool:didWin]];
+    [scoreArray enqueue:pair];
+}
+
 - (IBAction)onBottomPressed:(id)sender {
     //prevent false updates
     if (!self.bottomTapped && self.started){
@@ -148,6 +150,8 @@
         if (!self.topTapped){
             self.bottomTextBox.text = @"You won!";
             self.bottomView.backgroundColor = UIColorFromRGB(0x2ecc71);
+            
+            [self addScore:elapsedMs to:self.bottomScore with:true];
         }
         
         //top wins
@@ -155,15 +159,19 @@
             self.bottomView.backgroundColor = [UIColor redColor];
             self.bottomTextBox.text = @"You Lost";
             [self.readyButton setTitle:@"" forState:UIControlStateNormal];
-
-            //wait 2 sec before segue back to summary view
-            [self performSelector:@selector(segueBack) withObject:nil afterDelay:2.5];
-
+           
+            [self addScore:elapsedMs to:self.bottomScore with:false];
         }
 
+        //display time
         self.bottomTimeBox.text = [NSString stringWithFormat:@"%d ms", elapsedMs];
+        
+        //wait 3 sec before segue back to summary view
+        [self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
     }
     else if (!self.started && !self.bottomTapped){
+        [self addScore:1000 to:self.bottomScore with:false];
+        [self addScore:0 to:self.topScore with:true];
         [self misFireFrom:self.bottomTextBox and:self.topTextBox];
     }
     
@@ -182,6 +190,9 @@ if (!self.topTapped && self.started){
         self.topView.backgroundColor = UIColorFromRGB(0x2ecc71);
         [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
         self.topTextBox.text = @"You won!";
+        
+        [self addScore:elapsedMs to:self.topScore with:true];
+
         }
     //bottom wins
     else {
@@ -190,14 +201,18 @@ if (!self.topTapped && self.started){
         self.topTextBox.text = @"You Lost";
         [self.readyButton setTitle:@"" forState:UIControlStateNormal];
         
-        //wait 2 sec before segue back to summary view
-        [self performSelector:@selector(segueBack) withObject:nil afterDelay:2.5];
+        [self addScore:elapsedMs to:self.topScore with:false];
     }
     
     [self.topTimeBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
     self.topTimeBox.text = [NSString stringWithFormat:@"%d ms",elapsedMs];
+    
+    //wait 3 sec before segue back to summary view
+    [self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
 }
 else if (!self.started && !self.topTapped){
+    [self addScore:1000 to:self.topScore with:false];
+    [self addScore:0 to:self.bottomScore with:true];
     [self misFireFrom:self.topTextBox and:self.bottomTextBox];
 }
 }
@@ -215,9 +230,9 @@ else if (!self.started && !self.topTapped){
     [self.readyButton setTitle:@"" forState:UIControlStateNormal];
     AudioServicesPlaySystemSound(misfireSoundID);
 	
-    //wait 2 sec before segue back to summary view
+    //wait 3 sec before segue back to summary view
 
-    [self performSelector:@selector(segueBack) withObject:nil afterDelay:2.5];
+    [self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
 }
 
 -(void) segueBack {
@@ -229,5 +244,7 @@ else if (!self.started && !self.topTapped){
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     XYZSummaryViewController *destViewController = (XYZSummaryViewController *)segue.destinationViewController;
     destViewController.gameSession = self.gameSession;
+    destViewController.bottomScore = self.bottomScore;
+    destViewController.topScore = self.topScore;
 }
 @end

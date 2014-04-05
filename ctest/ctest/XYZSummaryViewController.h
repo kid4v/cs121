@@ -13,7 +13,7 @@
 
 @property (nonatomic) NSMutableArray* gameSession;
 
-//These are arrays of (NSInteger timeInMs, Boolean didWin)
+//These are arrays of (NSInteger timeInMs, Boolean didWin) tuples.
 @property NSMutableArray * topScore;
 @property NSMutableArray * bottomScore;
 

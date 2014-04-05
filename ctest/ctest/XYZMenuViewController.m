@@ -13,6 +13,8 @@
 @interface XYZMenuViewController ()
 
 @property NSMutableArray* gameSession;
+@property NSMutableArray* topScore;
+@property NSMutableArray* bottomScore;
 
 @end
 
@@ -32,6 +34,13 @@
     [super viewDidLoad];
     [self reset];
     self.gameSession = [[NSMutableArray alloc] init];
+    self.bottomScore = [[NSMutableArray alloc] init];
+    self.topScore = [[NSMutableArray alloc] init];
+//    NSArray * pair1 = @[@12, @true];
+//    [self.topScore enqueue: pair1];
+//    NSString * preview1 = [[self.topScore valueForKey:@"description"] componentsJoinedByString:@" "];
+//    NSLog(@"%@", preview1);
+
 
 	// Do any additional setup after loading the view.
 }
