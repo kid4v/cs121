@@ -129,6 +129,8 @@
     }
 }
 
+// The scores are paired with Boolean values that specify wins/losses in case
+// we implement green/red coloring in the SummaryViewController display.
 - (void) addScore:(NSInteger)timeElapsed to:(NSMutableArray*)scoreArray with:(Boolean)didWin {
     NSArray * pair = @[[NSNumber numberWithInt:timeElapsed], [NSNumber numberWithBool:didWin]];
     [scoreArray enqueue:pair];

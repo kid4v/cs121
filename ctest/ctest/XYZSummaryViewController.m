@@ -36,16 +36,23 @@ NSArray *tableData;
         
     }
     
+    NSMutableString *top = [[NSMutableString alloc] init];
     for (NSArray* currentPair in self.topScore)
     {
-        NSLog(@"Summarize:");
-        NSLog(@"%@", currentPair);
+        NSString *temp = [[currentPair objectAtIndex:0] stringValue];
+        [top appendString:temp];
+        [top appendString:@"\n"];
     }
+    [self.topScoreText setText:top];
     
-//    NSArray * top = [[self.topScore valueForKey:@"description"] componentsJoinedByString:@" "];
-//    NSLog(@"%@", self.topScore);
-//    [self.topScoreText setText:@"fhdjskahfdslafd"];
-    //        [self.topScoreLabel sizeToFit];
+    NSMutableString *bottom = [[NSMutableString alloc] init];
+    for (NSArray* currentPair in self.bottomScore)
+    {
+        NSString *temp = [[currentPair objectAtIndex:0] stringValue];
+        [bottom appendString:temp];
+        [bottom appendString:@"\n"];
+    }
+    [self.topScoreText setText:bottom];
 }
 
 
@@ -67,6 +74,8 @@ NSArray *tableData;
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     XYZSummaryViewController *destViewController = (XYZSummaryViewController *)segue.destinationViewController;
     destViewController.gameSession = self.gameSession;
+    destViewController.topScore = self.topScore;
+    destViewController.bottomScore = self.bottomScore;
 }
 
 @end

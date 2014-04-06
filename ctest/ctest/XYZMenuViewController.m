@@ -83,6 +83,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     XYZSummaryViewController *destViewController = (XYZSummaryViewController *)segue.destinationViewController;
     destViewController.gameSession = self.gameSession;
+    destViewController.topScore = self.topScore;
+    destViewController.bottomScore = self.bottomScore;
 }
 
 - (IBAction)startSession:(id)sender {
