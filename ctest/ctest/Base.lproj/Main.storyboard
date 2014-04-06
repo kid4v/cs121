@@ -57,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MEW-cr-Pvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-340" y="-697"/>
+            <point key="canvasLocation" x="-490" y="-18"/>
         </scene>
         <!--Summary View Controller-->
         <scene sceneID="nE1-jo-f1Q">
@@ -123,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9J-nF-SxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="-697"/>
+            <point key="canvasLocation" x="32" y="-704"/>
         </scene>
         <!--Mini1 View Controller-->
         <scene sceneID="PYd-vp-ycq">
@@ -235,12 +235,12 @@
                         <outlet property="topTextBox" destination="FKs-Me-pQe" id="bSr-i1-mk5"/>
                         <outlet property="topTimeBox" destination="AUH-Vg-aCK" id="mn8-m3-Ncw"/>
                         <outlet property="topView" destination="NLi-5d-5W9" id="Jnr-Wd-fre"/>
-                        <segue destination="1dd-gT-eCB" kind="modal" identifier="from1" id="CJK-a4-Lvb"/>
+                        <segue destination="1dd-gT-eCB" kind="modal" identifier="from1" id="xJZ-h0-fWe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgR-8K-I0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="71" y="-18"/>
+            <point key="canvasLocation" x="32" y="-30"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

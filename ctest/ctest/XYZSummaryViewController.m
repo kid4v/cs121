@@ -52,7 +52,11 @@ NSArray *tableData;
         [bottom appendString:temp];
         [bottom appendString:@"\n"];
     }
-    [self.topScoreText setText:bottom];
+    [self.bottomScoreText setText:bottom];
+    
+    self.bottomScoreText.textAlignment = NSTextAlignmentCenter;
+    self.topScoreText.textAlignment = NSTextAlignmentCenter;
+
 }
 
 

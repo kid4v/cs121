@@ -160,13 +160,15 @@
             [self.readyButton setTitle:@"" forState:UIControlStateNormal];
            
             [self addScore:elapsedMs to:self.bottomScore with:false];
+            
+            //wait 3 sec before segue back to summary view
+            [self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
         }
 
         //display time
         self.bottomTimeBox.text = [NSString stringWithFormat:@"%d ms", elapsedMs];
         
-        //wait 3 sec before segue back to summary view
-        [self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
+        
     }
     else if (!self.started && !self.bottomTapped){
         [self addScore:1000 to:self.bottomScore with:false];
@@ -201,13 +203,14 @@ if (!self.topTapped && self.started){
         [self.readyButton setTitle:@"" forState:UIControlStateNormal];
         
         [self addScore:elapsedMs to:self.topScore with:false];
+        
+        //wait 3 sec before segue back to summary view
+        [self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
     }
     
     [self.topTimeBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
     self.topTimeBox.text = [NSString stringWithFormat:@"%d ms",elapsedMs];
     
-    //wait 3 sec before segue back to summary view
-    [self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
 }
 else if (!self.started && !self.topTapped){
     [self addScore:1000 to:self.topScore with:false];
@@ -236,6 +239,8 @@ else if (!self.started && !self.topTapped){
 
 -(void) segueBack {
 	[backgroundMusicPlayer stop];
+    
+    NSLog(@"About to leave Mini1.");
     [self performSegueWithIdentifier:@"from1" sender:self];
 }
 
