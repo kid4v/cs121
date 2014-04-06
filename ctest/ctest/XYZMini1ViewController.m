@@ -43,11 +43,11 @@
 	// Do any additional setup after loading the view.
 	
 	// Fonts:
-//	self.readyButton.titleLabel.font = [UIFont fontWithName:@"MoonFlowerBold" size: 57];
-//	self.topTextBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 38];
-//	self.bottomTextBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 38];
-//	self.topTimeBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 35];
-//	self.bottomTimeBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 35];
+    //	self.readyButton.titleLabel.font = [UIFont fontWithName:@"MoonFlowerBold" size: 57];
+    //	self.topTextBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 38];
+    //	self.bottomTextBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 38];
+    //	self.topTimeBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 35];
+    //	self.bottomTimeBox.font = [UIFont fontWithName:@"MoonFlowerBold" size: 35];
 	// Misfire Sound
 	NSURL *misfireSoundURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"beep_beep" ofType: @"wav"]];
 	AudioServicesCreateSystemSoundID((__bridge CFURLRef) misfireSoundURL, &misfireSoundID);
@@ -73,9 +73,9 @@
     if (!self.started){
         [self.readyButton setTitle:@"SET..." forState:UIControlStateNormal];
         self.readyButton.enabled = NO;
-        double waitTime = ((double)rand() / RAND_MAX) * 3 + 1;
+        double waitTime = ((double)rand() / RAND_MAX) * 5 + 1;
         [NSTimer scheduledTimerWithTimeInterval:waitTime target:self
-                                       selector:@selector(start:)
+                                       selector:@selector(start)
                                        userInfo:nil
                                         repeats:NO];
     }
@@ -115,17 +115,24 @@
 }
 
 // GO!!!
-- (IBAction) start: (id)sender {
+- (void) start {
     if(!self.started){
-    self.started = true;
-    self.startTime = CACurrentMediaTime();
+        self.started = true;
+        self.startTime = CACurrentMediaTime();
 		
-    self.topView.backgroundColor = UIColorFromRGB(0xecf0f1);
-    self.bottomView.backgroundColor = UIColorFromRGB(0xecf0f1);
         
-        //BROKEN!!!
+        //Say "GO!!!" in the middle.
+//        [self.readyButton setTitle:@"GO!!!" forState:UIControlStateNormal];
+//        [self.readyButton setTitle:@"GO!!!" forState:UIControlStateHighlighted];
+        [self.readyButton setTitle:@"GO!!!" forState:UIControlStateDisabled];
 
-        [self.readyButton setTitle:@"GO!!!" forState:UIControlStateNormal];
+        
+
+        
+        //Change color to set off the competition
+        self.topView.backgroundColor = UIColorFromRGB(0xFFDB4D);
+        self.bottomView.backgroundColor = UIColorFromRGB(0xFFDB4D);
+        
     }
 }
 
@@ -158,13 +165,13 @@
             self.bottomView.backgroundColor = [UIColor redColor];
             self.bottomTextBox.text = @"You Lost";
             [self.readyButton setTitle:@"" forState:UIControlStateNormal];
-           
+            
             [self addScore:elapsedMs to:self.bottomScore with:false];
             
             //wait 3 sec before segue back to summary view
             [self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
         }
-
+        
         //display time
         self.bottomTimeBox.text = [NSString stringWithFormat:@"%d ms", elapsedMs];
         
@@ -180,43 +187,43 @@
 - (IBAction)onTopPressed:(id)sender {
     
     //prevent false update
-if (!self.topTapped && self.started){
-    self.topTapped = true;
-    CFTimeInterval currentTime = CACurrentMediaTime();
-    CFTimeInterval elapsedTime = currentTime - self.startTime;
-    NSInteger elapsedMs = elapsedTime * 1000;
-    
-    //top wins
-    if (!self.bottomTapped){
-        self.topView.backgroundColor = UIColorFromRGB(0x2ecc71);
-        [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
-        self.topTextBox.text = @"You won!";
+    if (!self.topTapped && self.started){
+        self.topTapped = true;
+        CFTimeInterval currentTime = CACurrentMediaTime();
+        CFTimeInterval elapsedTime = currentTime - self.startTime;
+        NSInteger elapsedMs = elapsedTime * 1000;
         
-        [self addScore:elapsedMs to:self.topScore with:true];
-
+        //top wins
+        if (!self.bottomTapped){
+            self.topView.backgroundColor = UIColorFromRGB(0x2ecc71);
+            [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
+            self.topTextBox.text = @"You won!";
+            
+            [self addScore:elapsedMs to:self.topScore with:true];
+            
         }
-    //bottom wins
-    else {
-        self.topView.backgroundColor = [UIColor redColor];
-        [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
-        self.topTextBox.text = @"You Lost";
-        [self.readyButton setTitle:@"" forState:UIControlStateNormal];
+        //bottom wins
+        else {
+            self.topView.backgroundColor = [UIColor redColor];
+            [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
+            self.topTextBox.text = @"You Lost";
+            [self.readyButton setTitle:@"" forState:UIControlStateNormal];
+            
+            [self addScore:elapsedMs to:self.topScore with:false];
+            
+            //wait 3 sec before segue back to summary view
+            [self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
+        }
         
-        [self addScore:elapsedMs to:self.topScore with:false];
+        [self.topTimeBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
+        self.topTimeBox.text = [NSString stringWithFormat:@"%d ms",elapsedMs];
         
-        //wait 3 sec before segue back to summary view
-        [self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
     }
-    
-    [self.topTimeBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
-    self.topTimeBox.text = [NSString stringWithFormat:@"%d ms",elapsedMs];
-    
-}
-else if (!self.started && !self.topTapped){
-    [self addScore:1000 to:self.topScore with:false];
-    [self addScore:0 to:self.bottomScore with:true];
-    [self misFireFrom:self.topTextBox and:self.bottomTextBox];
-}
+    else if (!self.started && !self.topTapped){
+        [self addScore:1000 to:self.topScore with:false];
+        [self addScore:0 to:self.bottomScore with:true];
+        [self misFireFrom:self.topTextBox and:self.bottomTextBox];
+    }
 }
 
 - (IBAction)misFireFrom:(UILabel*)loser and: (UILabel*) winner
@@ -233,14 +240,12 @@ else if (!self.started && !self.topTapped){
     AudioServicesPlaySystemSound(misfireSoundID);
 	
     //wait 3 sec before segue back to summary view
-
+    
     [self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
 }
 
 -(void) segueBack {
 	[backgroundMusicPlayer stop];
-    
-    NSLog(@"About to leave Mini1.");
     [self performSegueWithIdentifier:@"from1" sender:self];
 }
 

@@ -31,7 +31,6 @@ NSArray *tableData;
     [super viewDidLoad];
     if ([self.gameSession count] == 0) {
         [self.nextButton setTitle:@"GAME OVER" forState:UIControlStateNormal];
-        self.nextButton.enabled = NO;
     } else {
         
     }
@@ -67,7 +66,6 @@ NSArray *tableData;
 }
 
 - (IBAction)next:(id)sender {
-//    NSLog(@"nextGame pressed");
     NSString * segue = [NSString stringWithFormat: @"to%@", [self.gameSession dequeue]];
     [self performSegueWithIdentifier:segue sender:sender];
 }
