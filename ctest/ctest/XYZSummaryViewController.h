@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *topScoreText;
 @property (weak, nonatomic) IBOutlet UITextView *bottomScoreText;
 
+@property (weak, nonatomic) IBOutlet UILabel *winnerLabel;
 
 - (IBAction)next:(id)sender;
 

@@ -111,6 +111,13 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zns-aQ-ocg">
+                                <rect key="frame" x="20" y="341" width="280" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="34"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.71944140948939406" green="0.91091511225558208" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -118,7 +125,9 @@
                         <outlet property="bottomScoreText" destination="TQC-I6-9kf" id="0xu-sU-Xyc"/>
                         <outlet property="nextButton" destination="bfT-nG-SNp" id="hHu-ok-vy1"/>
                         <outlet property="topScoreText" destination="CgN-CL-Yfa" id="nkd-TH-N0s"/>
+                        <outlet property="winnerLabel" destination="zns-aQ-ocg" id="qAP-B1-C2S"/>
                         <segue destination="lk7-WI-7H7" kind="modal" identifier="to1" id="wbd-96-Yta"/>
+                        <segue destination="QaT-UB-Lec" kind="modal" identifier="restart" id="Nwv-0Y-huB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e9J-nF-SxY" userLabel="First Responder" sceneMemberID="firstResponder"/>

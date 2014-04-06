@@ -55,13 +55,22 @@ NSArray *tableData;
     
     
     if ([self.gameSession count] == 0) {
-        [self.nextButton setTitle:@"GAME OVER" forState:UIControlStateNormal];
+        [self.nextButton setTitle:@"Start Over?" forState:UIControlStateNormal];
         
         //Add the final scores
         [top appendString:@"---------\n"];
         [bottom appendString:@"---------\n"];
         [top appendString:[NSString stringWithFormat: @"%d", topSum]];
         [bottom appendString:[NSString stringWithFormat: @"%d", bottomSum]];
+        
+        //Declare winner
+        if (topSum < bottomSum) {
+            [self.winnerLabel setText:@"Top Wins!"];
+        } else if (bottomSum < topSum) {
+            [self.winnerLabel setText:@"Bottom Wins!"];
+        } else {
+            [self.winnerLabel setText:@"Tie Game!"];
+        }
     }
     
     //update score text
@@ -84,7 +93,14 @@ NSArray *tableData;
 }
 
 - (IBAction)next:(id)sender {
-    NSString * segue = [NSString stringWithFormat: @"to%@", [self.gameSession dequeue]];
+    //if game session is done then restart, otherwise go to next game.
+    NSString * segue;
+    if ([self.gameSession count] == 0) {
+        segue = @"restart";
+    }else {
+        segue = [NSString stringWithFormat: @"to%@", [self.gameSession dequeue]];
+
+    }
     [self performSegueWithIdentifier:segue sender:sender];
 }
 
