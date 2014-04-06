@@ -29,35 +29,53 @@ NSArray *tableData;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    if ([self.gameSession count] == 0) {
-        [self.nextButton setTitle:@"GAME OVER" forState:UIControlStateNormal];
-    } else {
-        
-    }
+    
+    NSInteger topSum = 0;
+    NSInteger bottomSum = 0;
     
     NSMutableString *top = [[NSMutableString alloc] init];
     for (NSArray* currentPair in self.topScore)
     {
+        topSum += [[currentPair objectAtIndex:0] intValue];
+        
         NSString *temp = [[currentPair objectAtIndex:0] stringValue];
         [top appendString:temp];
         [top appendString:@"\n"];
     }
-    [self.topScoreText setText:top];
     
     NSMutableString *bottom = [[NSMutableString alloc] init];
     for (NSArray* currentPair in self.bottomScore)
     {
+        bottomSum += [[currentPair objectAtIndex:0] intValue];
+        
         NSString *temp = [[currentPair objectAtIndex:0] stringValue];
         [bottom appendString:temp];
         [bottom appendString:@"\n"];
     }
-    [self.bottomScoreText setText:bottom];
     
+    
+    if ([self.gameSession count] == 0) {
+        [self.nextButton setTitle:@"GAME OVER" forState:UIControlStateNormal];
+        
+        //Add the final scores
+        [top appendString:@"---------\n"];
+        [bottom appendString:@"---------\n"];
+        [top appendString:[NSString stringWithFormat: @"%d", topSum]];
+        [bottom appendString:[NSString stringWithFormat: @"%d", bottomSum]];
+    }
+    
+    //update score text
+    [self.topScoreText setText:top];
+    [self.bottomScoreText setText:bottom];
+    //center score text
     self.bottomScoreText.textAlignment = NSTextAlignmentCenter;
     self.topScoreText.textAlignment = NSTextAlignmentCenter;
 
 }
 
+- (void) sumScores:(NSMutableArray*)scoreArray into:(UITextView*)text {
+    
+}
 
 - (void)didReceiveMemoryWarning
 {

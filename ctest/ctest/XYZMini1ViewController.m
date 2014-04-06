@@ -122,8 +122,6 @@
 		
         
         //Say "GO!!!" in the middle.
-//        [self.readyButton setTitle:@"GO!!!" forState:UIControlStateNormal];
-//        [self.readyButton setTitle:@"GO!!!" forState:UIControlStateHighlighted];
         [self.readyButton setTitle:@"GO!!!" forState:UIControlStateDisabled];
 
         
