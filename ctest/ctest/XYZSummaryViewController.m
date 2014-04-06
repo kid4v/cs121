@@ -17,6 +17,8 @@
 
 @implementation XYZSummaryViewController
 
+NSArray *tableData;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -30,13 +32,22 @@
     if ([self.gameSession count] == 0) {
         [self.nextButton setTitle:@"GAME OVER" forState:UIControlStateNormal];
         self.nextButton.enabled = NO;
-//        [self.topScoreText setText:@"sklafjdksaljfdklsajfdklajdklajfdklajfkldasjdas"];
-//        [self.topScoreLabel sizeToFit];
     } else {
         
     }
-    // Do any additional setup after loading the view.
+    
+    for (NSArray* currentPair in self.topScore)
+    {
+        NSLog(@"Summarize:");
+        NSLog(@"%@", currentPair);
+    }
+    
+//    NSArray * top = [[self.topScore valueForKey:@"description"] componentsJoinedByString:@" "];
+//    NSLog(@"%@", self.topScore);
+//    [self.topScoreText setText:@"fhdjskahfdslafd"];
+    //        [self.topScoreLabel sizeToFit];
 }
+
 
 - (void)didReceiveMemoryWarning
 {

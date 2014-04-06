@@ -69,7 +69,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)gamesStart:(id)sender {
+- (IBAction)readyButtonPressed:(id)sender {
     if (!self.started){
         [self.readyButton setTitle:@"SET..." forState:UIControlStateNormal];
         self.readyButton.enabled = NO;
@@ -79,6 +79,7 @@
                                        userInfo:nil
                                         repeats:NO];
     }
+    
     //If this game is over...
     else if ([self isOver]){
         //check for more games in gameSession
@@ -111,10 +112,6 @@
     self.topTimeBox.text = @"";
     self.bottomTextBox.text = @"";
     self.bottomTimeBox.text = @"";
-	
-
-    self.topView.backgroundColor = UIColorFromRGB(0x34495e);
-    self.bottomView.backgroundColor = UIColorFromRGB(0x34495e);
 }
 
 // GO!!!

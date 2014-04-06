@@ -27,7 +27,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 - (IBAction)onBottomPressed:(id)sender;
 - (IBAction)onTopPressed:(id)sender;
-- (IBAction)gamesStart:(id)sender;
+- (IBAction)readyButtonPressed:(id)sender;
 
 @property (nonatomic) NSMutableArray* gameSession;
 

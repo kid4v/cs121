@@ -9,16 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "NSMutableArray+QueueAdditions.h"
 
-@interface XYZSummaryViewController : UIViewController
+@interface XYZSummaryViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic) NSMutableArray* gameSession;
 
 //These are arrays of (NSInteger timeInMs, Boolean didWin) tuples.
 @property NSMutableArray * topScore;
 @property NSMutableArray * bottomScore;
-
-@property (weak, nonatomic) IBOutlet UITextView *topScoreText;
-@property (weak, nonatomic) IBOutlet UITextView *bottomScoreText;
 
 
 - (IBAction)next:(id)sender;
