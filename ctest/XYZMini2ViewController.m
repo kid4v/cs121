@@ -9,7 +9,17 @@
 #import "XYZMini2ViewController.h"
 
 @interface XYZMini2ViewController ()
-
+@property (weak, nonatomic) IBOutlet UIButton *readyButton;
+@property (weak, nonatomic) IBOutlet UIView *player1LeftView;
+@property (weak, nonatomic) IBOutlet UIView *player2LeftView;
+@property (weak, nonatomic) IBOutlet UIView *player1RightView;
+@property (weak, nonatomic) IBOutlet UIView *player2RightView;
+//booleans
+@property Boolean started;
+@property Boolean topTapped;
+@property Boolean bottomTapped;
+//startTime
+@property CFTimeInterval startTime;
 @end
 
 @implementation XYZMini2ViewController
@@ -35,6 +45,30 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (IBAction)readyButtonPressed:(id)sender {
+	if (!self.started){
+        [self.readyButton setTitle:@"SET..." forState:UIControlStateNormal];
+        self.readyButton.enabled = NO;
+        double waitTime = ((double)rand() / RAND_MAX) * 5 + 1;
+        [NSTimer scheduledTimerWithTimeInterval:waitTime target:self
+                                       selector:@selector(start)
+                                       userInfo:nil
+                                        repeats:NO];
+    }
+
+}
+// GO!!!
+- (void) start {
+    if(!self.started){
+        self.started = true;
+        self.startTime = CACurrentMediaTime();
+        //Say "GO!!!" in the middle.
+        [self.readyButton setTitle:@"GO!!!" forState:UIControlStateDisabled];
+    }
+}
+
+
+
 
 /*
 #pragma mark - Navigation
@@ -46,5 +80,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end
