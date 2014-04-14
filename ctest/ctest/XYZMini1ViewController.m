@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *topTimeBox;
 @property (weak, nonatomic) IBOutlet UILabel *bottomTimeBox;
 @property (weak, nonatomic) IBOutlet UIButton *readyButton;
+
+
 @property Boolean topTapped;
 @property Boolean bottomTapped;
 @property CFTimeInterval startTime;
@@ -68,10 +70,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 - (IBAction)readyButtonPressed:(id)sender {
-    if (!self.started){
-        [self.readyButton setTitle:@"SET..." forState:UIControlStateNormal];
+	if (!self.started){
+        [self.readyButton setBackgroundColor:UIColorFromRGB(0xFFDB4D)];
         self.readyButton.enabled = NO;
         double waitTime = ((double)rand() / RAND_MAX) * 5 + 1;
         [NSTimer scheduledTimerWithTimeInterval:waitTime target:self
@@ -96,6 +97,7 @@
         }
     }
 }
+
 - (bool) isOver{
     return (self.topTapped && self.bottomTapped);
 }
@@ -105,7 +107,6 @@
     self.topTapped = false;
     self.started = false;
     
-    [self.readyButton setTitle:@"READY?" forState:UIControlStateNormal];
     self.readyButton.enabled = YES;
     
     self.topTextBox.text = @"";
@@ -119,17 +120,11 @@
     if(!self.started){
         self.started = true;
         self.startTime = CACurrentMediaTime();
-		
-        
-        //Say "GO!!!" in the middle.
-        [self.readyButton setTitle:@"GO!!!" forState:UIControlStateDisabled];
-
-        
-
-        
-        //Change color to set off the competition
-        self.topView.backgroundColor = UIColorFromRGB(0xFFDB4D);
-        self.bottomView.backgroundColor = UIColorFromRGB(0xFFDB4D);
+        //turn button green
+        [self.readyButton setBackgroundColor:UIColorFromRGB(0x2ecc71)];
+		//Change color to set off the competition
+//        self.topView.backgroundColor = UIColorFromRGB(0xFFDB4D);
+//        self.bottomView.backgroundColor = UIColorFromRGB(0xFFDB4D);
         
     }
 }
@@ -162,8 +157,9 @@
         else {
             self.bottomView.backgroundColor = [UIColor redColor];
             self.bottomTextBox.text = @"You Lost";
-            [self.readyButton setTitle:@"" forState:UIControlStateNormal];
-            
+
+			
+			//accumulate scoring
             [self addScore:elapsedMs to:self.bottomScore with:false];
             
             //wait 3 sec before segue back to summary view
@@ -205,7 +201,7 @@
             self.topView.backgroundColor = [UIColor redColor];
             [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
             self.topTextBox.text = @"You Lost";
-            [self.readyButton setTitle:@"" forState:UIControlStateNormal];
+
             
             [self addScore:elapsedMs to:self.topScore with:false];
             
@@ -223,6 +219,8 @@
         [self misFireFrom:self.topTextBox and:self.bottomTextBox];
     }
 }
+
+
 
 - (IBAction)misFireFrom:(UILabel*)loser and: (UILabel*) winner
 {
