@@ -13,6 +13,7 @@
 		28859E5018E3DFFC004895D2 /* Light_rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 28859E4F18E3DFFC004895D2 /* Light_rain.wav */; };
 		28859E5218E3E227004895D2 /* God.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 28859E5118E3E227004895D2 /* God.mp3 */; };
 		28859E5418E3E76C004895D2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28859E5318E3E76C004895D2 /* AVFoundation.framework */; };
+		288B791418FC60C3002BC7D7 /* XYZMini2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 288B791318FC60C3002BC7D7 /* XYZMini2ViewController.m */; };
 		53E23F5F18CD85CD00CD0B7B /* XYZMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E23F5E18CD85CD00CD0B7B /* XYZMenuViewController.m */; };
 		53FBE72A18CF803D00D606D5 /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53FBE72918CF803D00D606D5 /* NSMutableArray+QueueAdditions.m */; };
 		9399D65A18B4DF6E000324E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9399D65918B4DF6E000324E7 /* Foundation.framework */; };
@@ -51,6 +52,8 @@
 		28859E4F18E3DFFC004895D2 /* Light_rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Light_rain.wav; sourceTree = "<group>"; };
 		28859E5118E3E227004895D2 /* God.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = God.mp3; sourceTree = "<group>"; };
 		28859E5318E3E76C004895D2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		288B791218FC60C3002BC7D7 /* XYZMini2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZMini2ViewController.h; sourceTree = "<group>"; };
+		288B791318FC60C3002BC7D7 /* XYZMini2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZMini2ViewController.m; sourceTree = "<group>"; };
 		53E23F5D18CD85CD00CD0B7B /* XYZMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZMenuViewController.h; sourceTree = "<group>"; };
 		53E23F5E18CD85CD00CD0B7B /* XYZMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZMenuViewController.m; sourceTree = "<group>"; };
 		53FBE72818CF803D00D606D5 /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
@@ -173,6 +176,8 @@
 				0BC8CEB018F0B0EA001FF7F1 /* Menu View */,
 				0BC8CEAE18F0B0C4001FF7F1 /* Summary View */,
 				0BC8CEAD18F0B0AB001FF7F1 /* Minigame 1 View */,
+				288B791218FC60C3002BC7D7 /* XYZMini2ViewController.h */,
+				288B791318FC60C3002BC7D7 /* XYZMini2ViewController.m */,
 			);
 			name = Game;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				9399D66618B4DF6E000324E7 /* main.m in Sources */,
 				939AB52E18B5AC9500A249CC /* xyzUIview.m in Sources */,
 				53FBE72A18CF803D00D606D5 /* NSMutableArray+QueueAdditions.m in Sources */,
+				288B791418FC60C3002BC7D7 /* XYZMini2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
