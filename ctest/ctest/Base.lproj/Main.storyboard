@@ -261,31 +261,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cEi-47-BX7" userLabel="Ready Button View">
-                                <rect key="frame" x="0.0" y="258" width="322" height="40"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UjO-XG-gCO">
-                                        <rect key="frame" x="-7" y="-8" width="336" height="55"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="39"/>
-                                        <state key="normal" title="READY?">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="readyButtonPressed:" destination="YN9-MF-aod" eventType="touchUpInside" id="ehA-2c-wIo"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E2J-C9-Els" userLabel="Player1LeftView">
-                                <rect key="frame" x="0.0" y="296" width="162" height="272"/>
+                                <rect key="frame" x="0.0" y="285" width="162" height="283"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DCA-Ez-nVi">
-                                        <rect key="frame" x="6" y="0.0" width="156" height="267"/>
+                                        <rect key="frame" x="6" y="-3" width="156" height="286"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -295,11 +276,11 @@
                                 <color key="backgroundColor" red="0.99191511889999995" green="0.68391010029999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tz4-4W-UM9" userLabel="Player2LeftView">
-                                <rect key="frame" x="0.0" y="0.0" width="162" height="258"/>
+                                <rect key="frame" x="0.0" y="0.0" width="162" height="285"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R7u-Wf-FVv">
-                                        <rect key="frame" x="0.0" y="0.0" width="162" height="258"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="162" height="285"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -309,11 +290,11 @@
                                 <color key="backgroundColor" red="0.99191511889999995" green="0.68391010029999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b34-eF-bX4" userLabel="Player1RightView">
-                                <rect key="frame" x="162" y="296" width="160" height="272"/>
+                                <rect key="frame" x="162" y="280" width="160" height="288"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g3R-iL-wJi">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="267"/>
+                                        <rect key="frame" x="0.0" y="-6" width="160" height="289"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -323,11 +304,11 @@
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cS5-MD-0GF" userLabel="Player2RightView">
-                                <rect key="frame" x="162" y="0.0" width="158" height="258"/>
+                                <rect key="frame" x="162" y="0.0" width="158" height="285"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rI-wc-dLd">
-                                        <rect key="frame" x="0.0" y="0.0" width="158" height="258"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="158" height="285"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -336,6 +317,23 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9V-3D-rhb" userLabel="readyButton">
+                                <rect key="frame" x="145" y="269" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.98594826459884644" green="0.0" blue="0.026950567960739136" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="readyButtonPressed:" destination="YN9-MF-aod" eventType="touchUpInside" id="JPa-Le-zRF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.71944140950000002" green="0.9109151123" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -350,7 +348,7 @@
                         <outlet property="player2LeftViewButtonPressed" destination="R7u-Wf-FVv" id="aTq-FM-kqj"/>
                         <outlet property="player2RightView" destination="cS5-MD-0GF" id="yhO-uM-Y57"/>
                         <outlet property="player2RightViewButtonPressed" destination="4rI-wc-dLd" id="Xop-C3-Zuv"/>
-                        <outlet property="readyButton" destination="UjO-XG-gCO" id="F3W-WN-3Cd"/>
+                        <outlet property="readyButton" destination="L9V-3D-rhb" id="iQS-Wm-rM9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7AH-ju-8lj" userLabel="First Responder" sceneMemberID="firstResponder"/>

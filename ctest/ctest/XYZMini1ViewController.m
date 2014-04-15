@@ -144,6 +144,7 @@
         CFTimeInterval currentTime = CACurrentMediaTime();
         CFTimeInterval elapsedTime = currentTime - self.startTime;
         NSInteger elapsedMs = elapsedTime * 1000;
+		self.readyButton.hidden = YES;
         
         //bottom wins
         if (!self.topTapped){
@@ -186,6 +187,7 @@
         CFTimeInterval currentTime = CACurrentMediaTime();
         CFTimeInterval elapsedTime = currentTime - self.startTime;
         NSInteger elapsedMs = elapsedTime * 1000;
+		self.readyButton.hidden = YES;
         
         //top wins
         if (!self.bottomTapped){
@@ -234,6 +236,7 @@
     loser.text = @"Misfire—you lose!";
     [self.readyButton setTitle:@"" forState:UIControlStateNormal];
     AudioServicesPlaySystemSound(misfireSoundID);
+	self.readyButton.hidden = YES;
 	
     //wait 3 sec before segue back to summary view
     

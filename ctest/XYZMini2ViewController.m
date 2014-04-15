@@ -47,7 +47,7 @@
 }
 - (IBAction)readyButtonPressed:(id)sender {
 	if (!self.started){
-        [self.readyButton setTitle:@"SET..." forState:UIControlStateNormal];
+        [self.readyButton setBackgroundColor:UIColorFromRGB(0xFFDB4D)];
         self.readyButton.enabled = NO;
         double waitTime = ((double)rand() / RAND_MAX) * 5 + 1;
         [NSTimer scheduledTimerWithTimeInterval:waitTime target:self
@@ -55,7 +55,6 @@
                                        userInfo:nil
                                         repeats:NO];
     }
-
 }
 // GO!!!
 - (void) start {
@@ -63,7 +62,7 @@
         self.started = true;
         self.startTime = CACurrentMediaTime();
         //Say "GO!!!" in the middle.
-        [self.readyButton setTitle:@"GO!!!" forState:UIControlStateDisabled];
+        [self.readyButton setBackgroundColor:UIColorFromRGB(0x2ecc71)];
     }
 }
 
@@ -80,6 +79,7 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 
 @end
