@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lk7-WI-7H7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YN9-MF-aod">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -271,6 +271,9 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="lowerLeftButtonPressed:" destination="YN9-MF-aod" eventType="touchUpInside" id="oa7-BG-d40"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.99191511889999995" green="0.68391010029999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -299,9 +302,12 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="lowerRightButtonPressed:" destination="YN9-MF-aod" eventType="touchUpInside" id="Ei9-tz-YMk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.45020877170000001" green="0.68249735320000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cS5-MD-0GF" userLabel="Player2RightView">
                                 <rect key="frame" x="162" y="0.0" width="158" height="285"/>
@@ -315,7 +321,7 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.45020877170000001" green="0.68249735320000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9V-3D-rhb" userLabel="readyButton">
                                 <rect key="frame" x="145" y="269" width="30" height="30"/>
@@ -334,26 +340,73 @@
                                     <action selector="readyButtonPressed:" destination="YN9-MF-aod" eventType="touchUpInside" id="JPa-Le-zRF"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v1Z-ck-tXK" userLabel="topView">
+                                <rect key="frame" x="-1" y="-1" width="322" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6eU-w9-2KA" userLabel="topButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="322" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jvb-H5-fg1" userLabel="bottomView">
+                                <rect key="frame" x="0.0" y="520" width="322" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gaH-5X-iSR" userLabel="bottomButton">
+                                        <rect key="frame" x="0.0" y="0.0" width="322" height="48"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="35"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.71944140950000002" green="0.9109151123" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="bix-aL-VaF"/>
                     <connections>
-                        <outlet property="player1LeftView" destination="E2J-C9-Els" id="IXg-lu-y8e"/>
-                        <outlet property="player1LeftViewButtonPressed" destination="DCA-Ez-nVi" id="o29-MF-Gwa"/>
-                        <outlet property="player1RightView" destination="b34-eF-bX4" id="LKN-Ow-12f"/>
-                        <outlet property="player1RightViewButtonPressed" destination="g3R-iL-wJi" id="Fnc-33-Hxe"/>
-                        <outlet property="player2LeftView" destination="Tz4-4W-UM9" id="qvS-Ky-JuH"/>
-                        <outlet property="player2LeftViewButtonPressed" destination="R7u-Wf-FVv" id="aTq-FM-kqj"/>
-                        <outlet property="player2RightView" destination="cS5-MD-0GF" id="yhO-uM-Y57"/>
-                        <outlet property="player2RightViewButtonPressed" destination="4rI-wc-dLd" id="Xop-C3-Zuv"/>
+                        <outlet property="bottomButton" destination="gaH-5X-iSR" id="8cg-m4-gpY"/>
+                        <outlet property="lowerLeftButton" destination="DCA-Ez-nVi" id="pXt-4B-eNY"/>
+                        <outlet property="lowerRightButton" destination="g3R-iL-wJi" id="SX7-8o-a0N"/>
                         <outlet property="readyButton" destination="L9V-3D-rhb" id="iQS-Wm-rM9"/>
+                        <outlet property="topButton" destination="6eU-w9-2KA" id="pgf-VE-owN"/>
+                        <outlet property="upperLeftButton" destination="g3R-iL-wJi" id="8VL-qF-lll"/>
+                        <outlet property="upperLeftButtonPressed" destination="R7u-Wf-FVv" id="AV7-2V-0lT"/>
+                        <outlet property="upperRightButton" destination="4rI-wc-dLd" id="qef-d7-sGg"/>
+                        <outlet property="upperRightButtonPressed" destination="4rI-wc-dLd" id="nPk-xK-beL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7AH-ju-8lj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32" y="2"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="93M-zP-vuT">
+            <objects>
+                <viewController id="OnI-Wb-NaY" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MWn-Eg-g8W"/>
+                        <viewControllerLayoutGuide type="bottom" id="Re4-C4-2tL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9tD-gj-xZh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gx3-66-vhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -362,6 +415,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wbd-96-Yta"/>
+        <segue reference="cex-SP-Kox"/>
     </inferredMetricsTieBreakers>
 </document>

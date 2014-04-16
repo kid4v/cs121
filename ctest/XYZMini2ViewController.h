@@ -19,10 +19,11 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 @interface XYZMini2ViewController : UIViewController
 //buttons
 - (IBAction)readyButtonPressed:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *player2LeftViewButtonPressed;
-@property (weak, nonatomic) IBOutlet UIButton *player1LeftViewButtonPressed;
-@property (weak, nonatomic) IBOutlet UIButton *player1RightViewButtonPressed;
-@property (weak, nonatomic) IBOutlet UIButton *player2RightViewButtonPressed;
+- (IBAction)lowerRightButtonPressed:(id)sender;
+- (IBAction)lowerLeftButtonPressed:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *upperLeftButtonPressed;
+@property (weak, nonatomic) IBOutlet UIButton *upperRightButtonPressed;
+
 
 
 @end
