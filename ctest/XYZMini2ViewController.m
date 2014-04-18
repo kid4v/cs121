@@ -12,19 +12,20 @@
 @property (weak, nonatomic) IBOutlet UIButton *topButton;
 @property (weak, nonatomic) IBOutlet UIButton *bottomButton;
 @property (weak, nonatomic) IBOutlet UIButton *readyButton;
-@property (weak, nonatomic) IBOutlet UIButton *upperRightButton;
+@property (weak, nonatomic) IBOutlet UIButton *lowerLeftButton;
 @property (weak, nonatomic) IBOutlet UIButton *upperLeftButton;
 @property (weak, nonatomic) IBOutlet UIButton *lowerRightButton;
-@property (weak, nonatomic) IBOutlet UIButton *lowerLeftButton;
-
-
-//booleans
-@property Boolean started;
-@property Boolean topTapped;
-@property Boolean bottomTapped;
-//startTime
+@property (weak, nonatomic) IBOutlet UIButton *upperRightButton;
 @property CFTimeInterval startTime;
+@property int gameCase;
+@property Boolean started;
+@property Boolean lowerLeftTapped;
+@property Boolean lowerRightTapped;
+@property Boolean upperLeftTapped;
+@property Boolean upperRightTapped;
 @end
+
+
 
 @implementation XYZMini2ViewController
 
@@ -41,7 +42,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-	NSLog(@"Hi");
+	self.gameCase = arc4random()%4; //random number to choose which stimuli player will receive
+	[self.lowerLeftButton setBackgroundColor:UIColorFromRGB(0xc0392b)];
+	[self.upperLeftButton setBackgroundColor:UIColorFromRGB(0xc0392b)];
+	[self.lowerRightButton setBackgroundColor:UIColorFromRGB(0x3498db)];
+	[self.upperRightButton setBackgroundColor:UIColorFromRGB(0x3498db)];
 }
 
 - (void)didReceiveMemoryWarning
@@ -49,6 +54,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+//Game Initialization... giving the players the stimuli they need to choose the right button
 - (IBAction)readyButtonPressed:(id)sender {
 	if (!self.started){
         [self.readyButton setBackgroundColor:UIColorFromRGB(0xFFDB4D)];
@@ -61,67 +69,75 @@
     }
 }
 
-- (IBAction)lowerRightButtonPressed:(id)sender {
-}
-
-- (IBAction)lowerLeftButtonPressed:(id)sender {
-}
-// GO!!!
 - (void) start {
     if(!self.started){
         self.started = true;
         self.startTime = CACurrentMediaTime();
-        //Say "GO!!!" in the middle.
         [self.readyButton setBackgroundColor:UIColorFromRGB(0x2ecc71)];
-		//RANDOM NUMBER TIME
-		int randomValue = arc4random()%4;
-		if (randomValue == 0) {
+		//give player different stimuli based on a random number
+		if (self.gameCase == 0) {
 			[self startWithBlueTextRedColor];
-			NSLog(@"0");
 		}
-		if (randomValue == 1) {
+		if (self.gameCase == 1) {
 			[self startWithBlueTextBlueColor];
-			NSLog(@"1");
 		}
-		if (randomValue == 2) {
+		if (self.gameCase == 2) {
 			[self startWithRedTextRedColor];
-			NSLog(@"2");
 		}
-		if (randomValue == 3) {
+		if (self.gameCase == 3) {
 			[self startWithRedTextBlueColor];
-			NSLog(@"3");
 		}
-		
     }
 }
+//the different options for starting game
 -(void) startWithBlueTextRedColor
 {
 	[self.bottomButton setTitle:@"Blue" forState:(UIControlStateNormal)];
 	[self.topButton setTitle:@"Blue" forState:(UIControlStateNormal)];
-	[self.bottomButton setTitleColor:(UIColorFromRGB(0xf1c40f)) forState:(UIControlStateNormal)];
-	[self.topButton setTitleColor:(UIColorFromRGB(0xf1c40f)) forState:(UIControlStateNormal)];
+	[self.bottomButton setTitleColor:(UIColorFromRGB(0xc0392b)) forState:(UIControlStateNormal)];
+	[self.topButton setTitleColor:(UIColorFromRGB(0xc0392b)) forState:(UIControlStateNormal)];
 }
 -(void) startWithBlueTextBlueColor
 {
 	[self.bottomButton setTitle:@"Blue" forState:(UIControlStateNormal)];
 	[self.topButton setTitle:@"Blue" forState:(UIControlStateNormal)];
-	[self.bottomButton setTitleColor:(UIColorFromRGB(0x2c3e50)) forState:(UIControlStateNormal)];
-	[self.topButton setTitleColor:(UIColorFromRGB(0x2c3e50)) forState:(UIControlStateNormal)];
+	[self.bottomButton setTitleColor:(UIColorFromRGB(0x3498db)) forState:(UIControlStateNormal)];
+	[self.topButton setTitleColor:(UIColorFromRGB(0x3498db)) forState:(UIControlStateNormal)];
 }
 -(void) startWithRedTextRedColor
 {
 	[self.bottomButton setTitle:@"Red" forState:(UIControlStateNormal)];
 	[self.topButton setTitle:@"Red" forState:(UIControlStateNormal)];
-	[self.bottomButton setTitleColor:(UIColorFromRGB(0xf1c40f)) forState:(UIControlStateNormal)];
-	[self.topButton setTitleColor:(UIColorFromRGB(0xf1c40f)) forState:(UIControlStateNormal)];
+	[self.bottomButton setTitleColor:(UIColorFromRGB(0xc0392b)) forState:(UIControlStateNormal)];
+	[self.topButton setTitleColor:(UIColorFromRGB(0xc0392b)) forState:(UIControlStateNormal)];
 }
 -(void) startWithRedTextBlueColor
 {
 	[self.bottomButton setTitle:@"Red" forState:(UIControlStateNormal)];
 	[self.topButton setTitle:@"Red" forState:(UIControlStateNormal)];
-	[self.bottomButton setTitleColor:(UIColorFromRGB(0x2c3e50)) forState:(UIControlStateNormal)];
-	[self.topButton setTitleColor:(UIColorFromRGB(0x2c3e50)) forState:(UIControlStateNormal)];
+	[self.bottomButton setTitleColor:(UIColorFromRGB(0x3498db)) forState:(UIControlStateNormal)];
+	[self.topButton setTitleColor:(UIColorFromRGB(0x3498db)) forState:(UIControlStateNormal)];
 }
+
+
+//Player Reactions... dealing with actions after the game has been set into action
+- (IBAction)lowerLeftButtonPressed:(id)sender {
+}
+
+- (IBAction)upperLeftButtonPressed:(id)sender {
+}
+
+- (IBAction)lowerRightButtonPressed:(id)sender {
+}
+
+- (IBAction)upperRightButtonPressed:(id)sender {
+}
+
+- (IBAction)lowerRightButtonPresseed:(id)sender {
+}
+
+
+
 
 
 /*
