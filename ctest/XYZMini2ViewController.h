@@ -26,5 +26,6 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 //scoring -- (NSInteger time in MS, Boolean didWin) tuples.
 @property NSMutableArray * topScore;
 @property NSMutableArray * bottomScore;
+@property (nonatomic) NSMutableArray* gameSession;
 @end
 

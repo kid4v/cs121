@@ -57,7 +57,7 @@
     self.sessionPreview.text = preview;
 }
 
-//add a minigame #1 to the session.
+//add a minigames to the session
 - (IBAction)mini1:(id)sender {
     if ([self.gameSession count] < 10) {
         [self.gameSession enqueue:@1];
@@ -69,6 +69,18 @@
 
     }
 }
+- (IBAction)mini2:(id)sender {
+	if ([self.gameSession count] < 10) {
+        [self.gameSession enqueue:@2];
+        [self update];
+    }
+    else {
+        [self.sessionPreview setTextColor:[UIColor redColor]];
+        [self performSelector:@selector(resetColor) withObject:nil afterDelay:.1];
+		
+    }
+}
+
 
 - (void) resetColor {
     [self.sessionPreview setTextColor:[UIColor blackColor]];
@@ -87,6 +99,7 @@
         self.sessionPreview.text = @"Add a game first!";
     } else {
         NSString * segue = [NSString stringWithFormat: @"start%@", [self.gameSession dequeue]];
+		NSLog(segue);
         [self performSegueWithIdentifier:segue sender:sender];
     }
 }

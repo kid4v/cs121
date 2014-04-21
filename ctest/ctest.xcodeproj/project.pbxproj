@@ -176,10 +176,18 @@
 				0BC8CEB018F0B0EA001FF7F1 /* Menu View */,
 				0BC8CEAE18F0B0C4001FF7F1 /* Summary View */,
 				0BC8CEAD18F0B0AB001FF7F1 /* Minigame 1 View */,
+				2843BB2F1904A8AA009D9B31 /* Minigame 2 View */,
+			);
+			name = Game;
+			sourceTree = "<group>";
+		};
+		2843BB2F1904A8AA009D9B31 /* Minigame 2 View */ = {
+			isa = PBXGroup;
+			children = (
 				288B791218FC60C3002BC7D7 /* XYZMini2ViewController.h */,
 				288B791318FC60C3002BC7D7 /* XYZMini2ViewController.m */,
 			);
-			name = Game;
+			name = "Minigame 2 View";
 			sourceTree = "<group>";
 		};
 		289EC8E318E13398004FCABB /* Resources */ = {

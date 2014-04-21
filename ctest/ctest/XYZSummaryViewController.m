@@ -101,6 +101,7 @@ NSArray *tableData;
         segue = [NSString stringWithFormat: @"to%@", [self.gameSession dequeue]];
 
     }
+	NSLog(segue);
     [self performSegueWithIdentifier:segue sender:sender];
 }
 

@@ -14,6 +14,8 @@
 
 @interface XYZMenuViewController : UIViewController
 - (IBAction)mini1:(id)sender;
+- (IBAction)mini2:(id)sender;
+
 - (IBAction)startSession:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *sessionPreview;
 
