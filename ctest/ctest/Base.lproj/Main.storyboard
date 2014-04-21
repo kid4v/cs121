@@ -261,7 +261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kgR-8K-I0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-768" y="-1006"/>
+            <point key="canvasLocation" x="-470" y="-984"/>
         </scene>
         <!--Mini2 View Controller-->
         <scene sceneID="DTF-yg-TLl">
@@ -431,11 +431,12 @@
                         <outlet property="topTimeText" destination="634-ni-FrI" id="Gy8-LS-aqr"/>
                         <outlet property="upperLeftButton" destination="R7u-Wf-FVv" id="gnv-Dk-mZ4"/>
                         <outlet property="upperRightButton" destination="4rI-wc-dLd" id="9AC-Gb-gJG"/>
+                        <segue destination="1dd-gT-eCB" kind="modal" identifier="from2" id="asl-42-hja"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7AH-ju-8lj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-552" y="-90"/>
+            <point key="canvasLocation" x="-582" y="-53"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -444,7 +445,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="asl-42-hja"/>
         <segue reference="jYr-Bq-mRF"/>
-        <segue reference="wbd-96-Yta"/>
+        <segue reference="cex-SP-Kox"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -146,19 +146,19 @@
 		if(!self.upperLeftTapped && !self.upperRightTapped) {
 			[self.bottomButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
 			[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-//			[self addScore:1000 to:self.bottomScore with:true];
-//			[self addScore:0 to:self.topScore with:false];
+			[self addScore:elapsedMs to:self.bottomScore with:true];
 			
 		}
 		//Case where top Wins
 		else {
 			[self.bottomButton setTitle:@"Loser" forState:(UIControlStateNormal)];
 			[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-//			[self addScore:1000 to:self.topScore with:true];
-//			[self addScore:0 to:self.bottomScore with:false];
+			[self addScore:elapsedMs to:self.bottomScore with:false];
+			[self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
 		}
 		//OTHER THINGS!!!!!!!!!!!!!!
 		self.bottomTimeText.text = [NSString stringWithFormat:@"%d ms", elapsedMs];
+		
 	}
 	else {
 		[self misFireFrom:@"bottom"];
@@ -174,20 +174,20 @@
 		self.readyButton.hidden = YES;
 		self.upperLeftButton.enabled = NO;
 		self.upperRightButton.enabled = NO;
+		NSLog(@"suxces");
 		
 		//Case where top Wins
 		if(!self.lowerLeftTapped && !self.lowerRightTapped) {
 			[self.topButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
 			[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-//			[self addScore:1000 to:self.topScore with:true];
-//			[self addScore:0 to:self.bottomScore with:false];
+			[self addScore:elapsedMs to:self.topScore with:true];
 		}
 		//Case where bottom Wins
 		else {
 			[self.topButton setTitle:@"Loser" forState:(UIControlStateNormal)];
 			[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-//			[self addScore:1000 to:self.bottomScore with:true];
-//			[self addScore:0 to:self.topScore with:false];
+			[self addScore:elapsedMs to:self.topScore with:false];
+			[self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
 		}
 		//OTHER THINGS!!!!!!!!!!!!!!
 		[self.topTimeText setTransform:CGAffineTransformMakeRotation(-M_PI)];
@@ -213,18 +213,18 @@
 		if(!self.upperLeftTapped && !self.upperRightTapped) {
 			[self.bottomButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
 			[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-//			[self addScore:1000 to:self.bottomScore with:true];
-//			[self addScore:0 to:self.topScore with:false];
+			[self addScore:elapsedMs to:self.bottomScore with:true];
 		}
 		//Case where top Wins
 		else {
 			[self.bottomButton setTitle:@"Loser" forState:(UIControlStateNormal)];
 			[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-//			[self addScore:1000 to:self.topScore with:true];
-//			[self addScore:0 to:self.bottomScore with:false];
+			[self addScore:elapsedMs to:self.bottomScore with:false];
+			[self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
 		}
 		//OTHER THINGS!!!!!!!!!!!!!!
 		self.bottomTimeText.text = [NSString stringWithFormat:@"%d ms", elapsedMs];
+
 	}
 	else {
 		[self misFireFrom:@"bottom"];
@@ -245,19 +245,19 @@
 		if(!self.lowerLeftTapped && !self.lowerRightTapped) {
 			[self.topButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
 			[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-//			[self addScore:1000 to:self.topScore with:true];
-//			[self addScore:0 to:self.bottomScore with:false];
+			[self addScore:elapsedMs to:self.topScore with:true];
 		}
 		//Case where bottom Wins
 		else {
 			[self.topButton setTitle:@"Loser" forState:(UIControlStateNormal)];
 			[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-//			[self addScore:1000 to:self.bottomScore with:true];
-//			[self addScore:0 to:self.topScore with:false];
+			[self addScore:elapsedMs to:self.topScore with:false];
+			[self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
 		}
 		//OTHER THINGS!!!!!!!!!!!!!!
 		[self.topTimeText setTransform:CGAffineTransformMakeRotation(-M_PI)];
 		self.topTimeText.text = [NSString stringWithFormat:@"%d ms", elapsedMs];
+
 	}
 	else {
 		[self misFireFrom:@"top"];
@@ -269,53 +269,66 @@
 	
 	if([loser isEqualToString:@"top"]) {			//bottom wins
 		[self.topButton setTitle:@"Loser" forState:(UIControlStateNormal)];
+		[self.bottomButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
 		[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
+		[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
 		[self.topButton setTransform:CGAffineTransformMakeRotation(-M_PI)];
-//		[self addScore:1000 to:self.bottomScore with:true];
-//		[self addScore:0 to:self.topScore with:false];
+		[self addScore:1000 to:self.topScore with:false];
+		if(!self.lowerLeftTapped && !self.lowerRightTapped){
+			[self addScore:0 to:self.bottomScore with:true];
+		}
 		[self.topMisfireText setTransform:CGAffineTransformMakeRotation(-M_PI)];
 		self.topMisfireText.text = @"MISFIRE";
 		[self.upperLeftButton setBackgroundColor:[UIColor redColor]];
 		[self.upperRightButton setBackgroundColor:[UIColor redColor]];
+		[self.lowerLeftButton setBackgroundColor:[UIColor redColor]];
+		[self.lowerRightButton setBackgroundColor:[UIColor redColor]];
 		self.upperRightButton.enabled = NO;
 		self.upperLeftButton.enabled = NO;
+		self.lowerRightButton.enabled = NO;
+		self.lowerLeftButton.enabled = NO;
 	}
 	else {			//top wins
 		[self.bottomButton setTitle:@"Loser" forState:(UIControlStateNormal)];
+		[self.topButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
 		[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-//		[self addScore:1000 to:self.topScore with:true];
-//		[self addScore:0 to:self.bottomScore with:false];
+		[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
+		[self addScore:1000 to:self.bottomScore with:false];
+		if(!self.upperRightTapped && !self.upperLeftTapped) {
+			[self addScore:0 to: self.topScore with:true];
+		}
 		self.bottomMisfireText.text = @"MISFIRE";
 		[self.lowerLeftButton setBackgroundColor:[UIColor redColor]];
 		[self.lowerRightButton setBackgroundColor:[UIColor redColor]];
+		[self.upperLeftButton setBackgroundColor:[UIColor redColor]];
+		[self.upperRightButton setBackgroundColor:[UIColor redColor]];
 		self.lowerRightButton.enabled = NO;
 		self.lowerLeftButton.enabled = NO;
-
+		self.upperRightButton.enabled = NO;
+		self.upperLeftButton.enabled = NO;
 	}
-	//SEGUE BACK!!!!!!
+	[self performSelector:@selector(segueBack) withObject:nil afterDelay:3];
 }
 
 //Scoring
-//-(void) addScore:(NSInteger)timeElapsed to:(NSMutableArray *)scoreArray with:(Boolean)didWin {
-//	NSArray * pair = @[[NSNumber numberWithInt:timeElapsed], [NSNumber numberWithBool: didWin]];
-//	[scoreArray enqueue:pair];
-//}
+-(void) addScore:(NSInteger)timeElapsed to:(NSMutableArray *)scoreArray with:(Boolean)didWin {
+	NSArray * pair = @[[NSNumber numberWithInt:timeElapsed], [NSNumber numberWithBool: didWin]];
+	[scoreArray enqueue:pair];
+}
 
+//segue back
+-(void) segueBack {
+	[self performSegueWithIdentifier:@"from2" sender: self];
+}
 
-
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    XYZSummaryViewController *destViewController = (XYZSummaryViewController *)segue.destinationViewController;
+	destViewController.gameSession = self.gameSession;
+	destViewController.topScore = self.topScore;
+	destViewController.bottomScore = self.bottomScore;
 }
-*/
+
 
 
 
