@@ -280,15 +280,9 @@
 	}
 }
 -(IBAction)misFireFrom:(NSString *)loser {
-	self.lowerLeftTapped = true;
-	self.lowerRightTapped = true;
-	self.upperLeftTapped = true;
-	self.upperRightTapped = true;
 	self.started = true;
-	[self.lowerLeftButton setBackgroundColor:[UIColor redColor]];
-	[self.lowerRightButton setBackgroundColor:[UIColor redColor]];
-	[self.upperLeftButton setBackgroundColor:[UIColor redColor]];
-	[self.upperRightButton setBackgroundColor:[UIColor redColor]];
+
+
 	self.readyButton.hidden = YES;
 	if([loser isEqualToString:@"top"]) {			//bottom wins
 		[self.bottomButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
@@ -300,6 +294,10 @@
 		[self addScore:0 to:self.topScore with:false];
 		[self.topMisfireText setTransform:CGAffineTransformMakeRotation(-M_PI)];
 		self.topMisfireText.text = @"MISFIRE";
+		[self.upperLeftButton setBackgroundColor:[UIColor redColor]];
+		[self.upperRightButton setBackgroundColor:[UIColor redColor]];
+		self.upperRightButton.enabled = NO;
+		self.upperLeftButton.enabled = NO;
 		
 		
 	}
@@ -312,6 +310,10 @@
 		[self addScore:1000 to:self.topScore with:true];
 		[self addScore:0 to:self.bottomScore with:false];
 		self.bottomMisfireText.text = @"MISFIRE";
+		[self.lowerLeftButton setBackgroundColor:[UIColor redColor]];
+		[self.lowerRightButton setBackgroundColor:[UIColor redColor]];
+		self.lowerRightButton.enabled = NO;
+		self.lowerLeftButton.enabled = NO;
 
 	}
 	//SEGUE BACK!!!!!!
