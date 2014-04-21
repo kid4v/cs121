@@ -23,5 +23,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 - (IBAction)upperLeftButtonPressed:(id)sender;
 - (IBAction)lowerRightButtonPressed:(id)sender;
 - (IBAction)upperRightButtonPressed:(id)sender;
+//scoring -- (NSInteger time in MS, Boolean didWin) tuples.
+@property NSMutableArray * topScore;
+@property NSMutableArray * bottomScore;
 @end
 

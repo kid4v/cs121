@@ -372,6 +372,34 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fFR-b9-a3e" userLabel="bottomMisfireText">
+                                <rect key="frame" x="20" y="387" width="280" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tb-Jj-Keb" userLabel="topMisfireText">
+                                <rect key="frame" x="20" y="99" width="280" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SXj-nh-zyZ" userLabel="bottomTimeText">
+                                <rect key="frame" x="20" y="475" width="283" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="634-ni-FrI" userLabel="topTimeText">
+                                <rect key="frame" x="15" y="63" width="285" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.71944140950000002" green="0.9109151123" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -379,10 +407,14 @@
                     <navigationItem key="navigationItem" id="bix-aL-VaF"/>
                     <connections>
                         <outlet property="bottomButton" destination="gaH-5X-iSR" id="8cg-m4-gpY"/>
+                        <outlet property="bottomMisfireText" destination="fFR-b9-a3e" id="5aP-Tk-6YF"/>
+                        <outlet property="bottomTimeText" destination="SXj-nh-zyZ" id="k9C-Tc-hEu"/>
                         <outlet property="lowerLeftButton" destination="DCA-Ez-nVi" id="bJi-o5-ckb"/>
                         <outlet property="lowerRightButton" destination="g3R-iL-wJi" id="K3k-up-s1J"/>
                         <outlet property="readyButton" destination="L9V-3D-rhb" id="iQS-Wm-rM9"/>
                         <outlet property="topButton" destination="6eU-w9-2KA" id="pgf-VE-owN"/>
+                        <outlet property="topMisfireText" destination="9tb-Jj-Keb" id="HIs-ce-vZX"/>
+                        <outlet property="topTimeText" destination="634-ni-FrI" id="Gy8-LS-aqr"/>
                         <outlet property="upperLeftButton" destination="R7u-Wf-FVv" id="gnv-Dk-mZ4"/>
                         <outlet property="upperRightButton" destination="4rI-wc-dLd" id="9AC-Gb-gJG"/>
                     </connections>
@@ -390,23 +422,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7AH-ju-8lj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="32" y="2"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="93M-zP-vuT">
-            <objects>
-                <viewController id="OnI-Wb-NaY" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MWn-Eg-g8W"/>
-                        <viewControllerLayoutGuide type="bottom" id="Re4-C4-2tL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9tD-gj-xZh">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Gx3-66-vhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
