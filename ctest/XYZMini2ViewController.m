@@ -145,21 +145,17 @@
 		//Case where bottom Wins
 		if(!self.upperLeftTapped && !self.upperRightTapped) {
 			[self.bottomButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
-			[self.topButton setTitle:@"Loser" forState:(UIControlStateNormal)];
-			[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
 			[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-			[self addScore:1000 to:self.bottomScore with:true];
-			[self addScore:0 to:self.topScore with:false];
+//			[self addScore:1000 to:self.bottomScore with:true];
+//			[self addScore:0 to:self.topScore with:false];
 			
 		}
 		//Case where top Wins
 		else {
-			[self.topButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
 			[self.bottomButton setTitle:@"Loser" forState:(UIControlStateNormal)];
-			[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
 			[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-			[self addScore:1000 to:self.topScore with:true];
-			[self addScore:0 to:self.bottomScore with:false];
+//			[self addScore:1000 to:self.topScore with:true];
+//			[self addScore:0 to:self.bottomScore with:false];
 		}
 		//OTHER THINGS!!!!!!!!!!!!!!
 		self.bottomTimeText.text = [NSString stringWithFormat:@"%d ms", elapsedMs];
@@ -182,20 +178,16 @@
 		//Case where top Wins
 		if(!self.lowerLeftTapped && !self.lowerRightTapped) {
 			[self.topButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
-			[self.bottomButton setTitle:@"Loser" forState:(UIControlStateNormal)];
 			[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-			[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-			[self addScore:1000 to:self.topScore with:true];
-			[self addScore:0 to:self.bottomScore with:false];
+//			[self addScore:1000 to:self.topScore with:true];
+//			[self addScore:0 to:self.bottomScore with:false];
 		}
 		//Case where bottom Wins
 		else {
-			[self.bottomButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
 			[self.topButton setTitle:@"Loser" forState:(UIControlStateNormal)];
 			[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-			[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-			[self addScore:1000 to:self.bottomScore with:true];
-			[self addScore:0 to:self.topScore with:false];
+//			[self addScore:1000 to:self.bottomScore with:true];
+//			[self addScore:0 to:self.topScore with:false];
 		}
 		//OTHER THINGS!!!!!!!!!!!!!!
 		[self.topTimeText setTransform:CGAffineTransformMakeRotation(-M_PI)];
@@ -220,20 +212,16 @@
 		//Case where bottom Wins
 		if(!self.upperLeftTapped && !self.upperRightTapped) {
 			[self.bottomButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
-			[self.topButton setTitle:@"Loser" forState:(UIControlStateNormal)];
-			[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
 			[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-			[self addScore:1000 to:self.bottomScore with:true];
-			[self addScore:0 to:self.topScore with:false];
+//			[self addScore:1000 to:self.bottomScore with:true];
+//			[self addScore:0 to:self.topScore with:false];
 		}
 		//Case where top Wins
 		else {
-			[self.topButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
 			[self.bottomButton setTitle:@"Loser" forState:(UIControlStateNormal)];
-			[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
 			[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-			[self addScore:1000 to:self.topScore with:true];
-			[self addScore:0 to:self.bottomScore with:false];
+//			[self addScore:1000 to:self.topScore with:true];
+//			[self addScore:0 to:self.bottomScore with:false];
 		}
 		//OTHER THINGS!!!!!!!!!!!!!!
 		self.bottomTimeText.text = [NSString stringWithFormat:@"%d ms", elapsedMs];
@@ -256,20 +244,16 @@
 		//Case where top Wins
 		if(!self.lowerLeftTapped && !self.lowerRightTapped) {
 			[self.topButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
-			[self.bottomButton setTitle:@"Loser" forState:(UIControlStateNormal)];
 			[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-			[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-			[self addScore:1000 to:self.topScore with:true];
-			[self addScore:0 to:self.bottomScore with:false];
+//			[self addScore:1000 to:self.topScore with:true];
+//			[self addScore:0 to:self.bottomScore with:false];
 		}
 		//Case where bottom Wins
 		else {
-			[self.bottomButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
 			[self.topButton setTitle:@"Loser" forState:(UIControlStateNormal)];
 			[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-			[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-			[self addScore:1000 to:self.bottomScore with:true];
-			[self addScore:0 to:self.topScore with:false];
+//			[self addScore:1000 to:self.bottomScore with:true];
+//			[self addScore:0 to:self.topScore with:false];
 		}
 		//OTHER THINGS!!!!!!!!!!!!!!
 		[self.topTimeText setTransform:CGAffineTransformMakeRotation(-M_PI)];
@@ -281,34 +265,26 @@
 }
 -(IBAction)misFireFrom:(NSString *)loser {
 	self.started = true;
-
-
 	self.readyButton.hidden = YES;
+	
 	if([loser isEqualToString:@"top"]) {			//bottom wins
-		[self.bottomButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
 		[self.topButton setTitle:@"Loser" forState:(UIControlStateNormal)];
 		[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-		[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
 		[self.topButton setTransform:CGAffineTransformMakeRotation(-M_PI)];
-		[self addScore:1000 to:self.bottomScore with:true];
-		[self addScore:0 to:self.topScore with:false];
+//		[self addScore:1000 to:self.bottomScore with:true];
+//		[self addScore:0 to:self.topScore with:false];
 		[self.topMisfireText setTransform:CGAffineTransformMakeRotation(-M_PI)];
 		self.topMisfireText.text = @"MISFIRE";
 		[self.upperLeftButton setBackgroundColor:[UIColor redColor]];
 		[self.upperRightButton setBackgroundColor:[UIColor redColor]];
 		self.upperRightButton.enabled = NO;
 		self.upperLeftButton.enabled = NO;
-		
-		
 	}
 	else {			//top wins
-		[self.topButton setTitle:@"Winner!" forState:(UIControlStateNormal)];
 		[self.bottomButton setTitle:@"Loser" forState:(UIControlStateNormal)];
-		[self.topButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
 		[self.bottomButton setTitleColor:(UIColorFromRGB(0x000)) forState:(UIControlStateNormal)];
-		[self.topButton setTransform:CGAffineTransformMakeRotation(-M_PI)];
-		[self addScore:1000 to:self.topScore with:true];
-		[self addScore:0 to:self.bottomScore with:false];
+//		[self addScore:1000 to:self.topScore with:true];
+//		[self addScore:0 to:self.bottomScore with:false];
 		self.bottomMisfireText.text = @"MISFIRE";
 		[self.lowerLeftButton setBackgroundColor:[UIColor redColor]];
 		[self.lowerRightButton setBackgroundColor:[UIColor redColor]];
@@ -320,10 +296,10 @@
 }
 
 //Scoring
--(void) addScore:(NSInteger)timeElapsed to:(NSMutableArray *)scoreArray with:(Boolean)didWin {
-	NSArray * pair = @[[NSNumber numberWithInt:timeElapsed], [NSNumber numberWithBool: didWin]];
-	[scoreArray enqueue:pair];
-}
+//-(void) addScore:(NSInteger)timeElapsed to:(NSMutableArray *)scoreArray with:(Boolean)didWin {
+//	NSArray * pair = @[[NSNumber numberWithInt:timeElapsed], [NSNumber numberWithBool: didWin]];
+//	[scoreArray enqueue:pair];
+//}
 
 
 
