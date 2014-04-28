@@ -32,6 +32,7 @@
 		939AB52B18B5AA0B00A249CC /* XYZMini1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 939AB52A18B5AA0B00A249CC /* XYZMini1ViewController.m */; };
 		939AB52E18B5AC9500A249CC /* xyzUIview.m in Sources */ = {isa = PBXBuildFile; fileRef = 939AB52D18B5AC9500A249CC /* xyzUIview.m */; };
 		939AB53118B5ACEB00A249CC /* XYZColorUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = 939AB53018B5ACEB00A249CC /* XYZColorUIView.m */; };
+		93AE41FA1904DB2B00A5BE53 /* XYZMini3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AE41F91904DB2B00A5BE53 /* XYZMini3ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		939AB52D18B5AC9500A249CC /* xyzUIview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = xyzUIview.m; path = ctest/xyzUIview.m; sourceTree = "<group>"; };
 		939AB52F18B5ACEB00A249CC /* XYZColorUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZColorUIView.h; sourceTree = "<group>"; };
 		939AB53018B5ACEB00A249CC /* XYZColorUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZColorUIView.m; sourceTree = "<group>"; };
+		93AE41F81904DB0A00A5BE53 /* XYZMini3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYZMini3ViewController.h; sourceTree = "<group>"; };
+		93AE41F91904DB2B00A5BE53 /* XYZMini3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYZMini3ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,7 @@
 		0BC8CEB118F0B20A001FF7F1 /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				93AE41F71904DADC00A5BE53 /* Minigame 3 View */,
 				9399D66B18B4DF6E000324E7 /* Main.storyboard */,
 				0BC8CEB018F0B0EA001FF7F1 /* Menu View */,
 				0BC8CEAE18F0B0C4001FF7F1 /* Summary View */,
@@ -268,6 +272,15 @@
 				9399D68118B4DF6E000324E7 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		93AE41F71904DADC00A5BE53 /* Minigame 3 View */ = {
+			isa = PBXGroup;
+			children = (
+				93AE41F81904DB0A00A5BE53 /* XYZMini3ViewController.h */,
+				93AE41F91904DB2B00A5BE53 /* XYZMini3ViewController.m */,
+			);
+			name = "Minigame 3 View";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,6 +393,7 @@
 				939AB52E18B5AC9500A249CC /* xyzUIview.m in Sources */,
 				53FBE72A18CF803D00D606D5 /* NSMutableArray+QueueAdditions.m in Sources */,
 				288B791418FC60C3002BC7D7 /* XYZMini2ViewController.m in Sources */,
+				93AE41FA1904DB2B00A5BE53 /* XYZMini3ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

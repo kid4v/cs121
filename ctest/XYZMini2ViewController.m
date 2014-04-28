@@ -191,7 +191,7 @@
 		}
 		//OTHER THINGS!!!!!!!!!!!!!!
 		[self.topTimeText setTransform:CGAffineTransformMakeRotation(-M_PI)];
-		self.topTimeText.text = [NSString stringWithFormat:@"%d ms", elapsedMs];
+		//self.topTimeText.text = [NSString stringWithFormat:@"%d ms", elapsedMs];
 	}
 	else {
 		[self misFireFrom:@"top"];

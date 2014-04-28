@@ -80,6 +80,18 @@
 		
     }
 }
+- (IBAction)mini3:(id)sender{
+	if ([self.gameSession count] < 10) {
+        [self.gameSession enqueue:@3];
+        [self update];
+    }
+    else {
+        [self.sessionPreview setTextColor:[UIColor redColor]];
+        [self performSelector:@selector(resetColor) withObject:nil afterDelay:.1];
+		
+    }
+}
+
 
 
 - (void) resetColor {
