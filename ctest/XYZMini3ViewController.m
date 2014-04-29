@@ -141,8 +141,8 @@
     [self.topTimeBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
     [self.topTextBox setTransform:CGAffineTransformMakeRotation(-M_PI)];
 
-    self.topTimeBox.text = [NSString stringWithFormat:@"You scored: %u", self.topCount*100];
-    self.bottomTimeBox.text = [NSString stringWithFormat:@"You scored: %u", self.botCount*100];
+    self.topTimeBox.text = [NSString stringWithFormat:@"You scored: %u", 5000-self.topCount*100];
+    self.bottomTimeBox.text = [NSString stringWithFormat:@"You scored: %u", 5000-self.botCount*100];
     self.ended = true;
     self.readyButton.hidden = true;
 
@@ -150,24 +150,24 @@
     if(self.topCount>self.botCount){
         self.bottomView.backgroundColor = [UIColor redColor];
         self.topView.backgroundColor = UIColorFromRGB(0x2ecc71);
-        [self addScore:self.topCount*100 to:self.topScore with:false];
-        [self addScore:self.botCount*100 to:self.bottomScore with:true];
+        [self addScore:5000-self.topCount*100 to:self.topScore with:false];
+        [self addScore:5000-self.botCount*100 to:self.bottomScore with:true];
         self.topTextBox.text = @"You Win!";
         self.bottomTextBox.text = @"You Lose";
     }
     else if (self.topCount<self.botCount){
         self.topView.backgroundColor = [UIColor redColor];
         self.bottomView.backgroundColor = UIColorFromRGB(0x2ecc71);
-        [self addScore:self.botCount*100 to:self.bottomScore with:true];
-        [self addScore:self.topCount*100 to:self.topScore with:true];
+        [self addScore:5000-self.botCount*100 to:self.bottomScore with:true];
+        [self addScore:5000-self.topCount*100 to:self.topScore with:true];
         self.topTextBox.text = @"You Lose";
         self.bottomTextBox.text = @"You Win!";
     }
     else{
         self.topView.backgroundColor = [UIColor yellowColor];
         self.bottomView.backgroundColor = [UIColor yellowColor];
-        [self addScore:self.botCount*100 to:self.bottomScore with:true];
-        [self addScore:self.topCount*100 to:self.topScore with:true];
+        [self addScore:5000-self.botCount*100 to:self.bottomScore with:true];
+        [self addScore:5000-self.topCount*100 to:self.topScore with:true];
         self.topTextBox.text = @"Tie!";
         self.bottomTextBox.text = @"Tie!";
     }
